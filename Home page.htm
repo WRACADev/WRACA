@@ -1,0 +1,113 @@
+<!--
+This HTML code represents a login page with a simple form for username and password input.
+The page also includes buttons to toggle the visibility of various elements such as the login button, forgot password button, username box, password box, and logo text area.
+
+The CSS styles define the appearance of the page, including the background color, font family, container layout, input fields, buttons, and animation for the welcome message.
+
+The JavaScript functions handle the logic for toggling the visibility of elements and displaying a welcome message when the login button is clicked.
+
+To use this code, simply copy and paste it into an HTML file and open it in a web browser.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 300px;
+            padding: 16px;
+            background-color: white;
+            margin: 0 auto;
+            margin-top: 100px;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .welcome {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .welcome.active {
+            display: block;
+            animation: welcome 2s;
+        }
+
+        @keyframes welcome {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <label for="WRCA"><b>WRCA</b></label>
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" id="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" id="psw" required>
+
+    <button type="submit" id="login" onclick="login()">Login</button>
+    <button type="button" id="forgot" onclick="forgotPassword()">Forgot password</button>
+</div>
+
+<div class="welcome" id="welcome">
+    <h2>Welcome to the site!</h2>
+</div>
+
+<script>
+    function login() {
+        document.getElementById('welcome').classList.add('active');
+    }
+
+    function forgotPassword() {
+        // Redirect to the forgot password page
+        // window.location.href = "/forgot-password";
+    }
+
+    function toggleElement(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === "none") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    }
+</script>
+
+<button onclick="toggleElement('login')">Toggle Login Button</button>
+<button onclick="toggleElement('forgot')">Toggle Forgot Password Button</button>
+<button onclick="toggleElement('uname')">Toggle Username Box</button>
+<button onclick="toggleElement('psw')">Toggle Password Box</button>
+<button onclick="toggleElement('logo')">Toggle Logo Text Area</button>
+
+</body>
+</html>
