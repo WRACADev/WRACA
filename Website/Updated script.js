@@ -18,3 +18,15 @@ $(document).ready(function () {
     });
 
 });
+
+$(document).ready(function() {
+    $(".dropbtn").click(function() {
+        $(".dropdown-content").toggle();
+    });
+
+    $(document).click(function(event) {
+        if (!$(event.target).closest('.dropdown').length) {
+            $(".dropdown-content").hide();
+        }
+    });
+});
