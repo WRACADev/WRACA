@@ -1,91 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>index</title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
     <style>
-        .logo {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 100px; /* Adjust the width as needed */
-            height: auto;
-        }
+      .logo {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 100px; /* Adjust the width as needed */
+        height: auto;
+      }
     </style>
-</head>
+  </head>
 
-<body style="background-color:black">
+  <body style="background-color: black">
     <!-- Dropdown Menu -->
     <div class="dropdown">
-        <button class="dropbtn">Sections</button>
-        <div class="dropdown-content">
-            <a href="#home">Home</a>
-            <a href="#news">News</a>
-            <a href="#events">Events</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#artist-showcase">Artist Showcase</a>
-            <a href="#radio">Radio</a>
-            <a href="#contact">Contact</a>
-        </div>
+      <button class="dropbtn">Sections</button>
+      <div class="dropdown-content">
+        <a href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#events">Events</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#artist-showcase">Artist Showcase</a>
+        <a href="#radio">Radio</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
 
     <!-- Logo Placeholder -->
-    <img src="path/to/your/logo.png" alt="Logo" class="logo">
+    <img src="path/to/your/logo.png" alt="Logo" class="logo" />
 
-    <br><br>
+    <br /><br />
     <div class="main" id="main">
-        <div class="scrollingBG" id="scrollingBG"></div>
-        <div class="scrollingBG2" id="scrollingBG2"></div>
-        <div class="scrollingBG3" id="scrollingBG3"></div>
-        <div class="scrollingBG4" id="scrollingBG4"></div>
-        <div class="bg1" id="bg1"></div>
+      <div class="scrollingBG" id="scrollingBG"></div>
+      <div class="scrollingBG2" id="scrollingBG2"></div>
+      <div class="scrollingBG3" id="scrollingBG3"></div>
+      <div class="scrollingBG4" id="scrollingBG4"></div>
+      <div class="bg1" id="bg1"></div>
     </div>
 
     <!-- Social Media Links -->
     <div class="social-media">
-        <a href="https://x.com/yourprofile" target="_blank">
-            <img src="/mnt/data/636e0a6918e57475a843f59f_icon_clyde_black_RGB.svg" alt="X">
-        </a>
-        <a href="https://instagram.com/yourprofile" target="_blank">
-            <img src="/mnt/data/Instagram_logo_2022.svg.png" alt="Instagram">
-        </a>
-        <a href="https://spotify.com/yourprofile" target="_blank">
-            <img src="/mnt/data/kisspng-spotify-portable-network-graphics-clip-art-compute-5cb33439c9cd98.1004452415552481858266.jpg" alt="Spotify">
-        </a>
-        <a href="https://bandcamp.com/yourprofile" target="_blank">
-            <img src="/mnt/data/449929_band camp_bandcamp_bc_social network_icon.png" alt="Bandcamp">
-        </a>
-        <a href="https://music.apple.com/yourprofile" target="_blank">
-            <img src="/mnt/data/Apple_Music_icon.svg.png" alt="Apple Music">
-        </a>
-        <a href="https://youtube.com/yourprofile" target="_blank">
-            <img src="/mnt/data/314045-1.png" alt="YouTube">
-        </a>
+      <a href="https://x.com/yourprofile" target="_blank">
+        <img
+          src="/Website/images/twittard.png"
+          alt="X"
+          style="float: left; height: 100; width: 100" />
+      </a>
+      <a href="https://instagram.com/yourprofile" target="_blank">
+        <img
+          src="/Website/images/instagram.png"
+          alt="Instagram"
+          style="float: left; height: 100; width: 100" />
+      </a>
+      <a href="https://spotify.com/yourprofile" target="_blank">
+        <img
+          src="/Website/images/spopify.jpg"
+          alt="Spotify"
+          style="float: left; height: 100; width: 100" />
+      </a>
+      <a href="https://bandcamp.com/yourprofile" target="_blank">
+        <img
+          src="/Website/images/bandcamp.png"
+          alt="Bandcamp"
+          style="float: left; height: 100; width: 100" />
+      </a>
+      <a href="https://music.apple.com/yourprofile" target="_blank">
+        <img
+          src="/Website/images/appleMewsic.png"
+          alt="Apple Music"
+          style="float: left; height: 100; width: 100" />
+      </a>
+      <a href="https://youtube.com/yourprofile" target="_blank">
+        <img src="/mnt/data/314045-1.png" alt="YouTube" />
+      </a>
     </div>
 
     <!-- Popup Form -->
     <div id="popupForm" class="popup-form">
-        <div class="form-content">
-            <span class="close-btn">&times;</span>
-            <h2>Select Forum</h2>
-            <div id="forumList" class="forum-list">
-                <!-- Forum buttons will be inserted here dynamically -->
-            </div>
-            <div id="chatContainer" class="chat-container" style="display: none;">
-                <h2 id="forumTitle"></h2>
-                <div id="chatBox" class="chat-box"></div>
-                <form id="chatForm">
-                    <input type="text" id="chatInput" name="chatInput" placeholder="Type your message..." required>
-                    <button type="submit">Send</button>
-                </form>
-            </div>
+      <div class="form-content">
+        <span class="close-btn">&times;</span>
+        <h2>Select Forum</h2>
+        <div id="forumList" class="forum-list">
+          <!-- Forum buttons will be inserted here dynamically -->
         </div>
+        <div id="chatContainer" class="chat-container" style="display: none">
+          <h2 id="forumTitle"></h2>
+          <div id="chatBox" class="chat-box"></div>
+          <form id="chatForm">
+            <input
+              type="text"
+              id="chatInput"
+              name="chatInput"
+              placeholder="Type your message..."
+              required />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
     </div>
 
     <button id="openFormBtn">Open Chat</button>
-</body>
+  </body>
 </html>
