@@ -290,4 +290,14 @@ body {
     display: none;
 }
 
+.wraca-logo {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    width: auto; /* Maintain aspect ratio */
+    z-index: 100; /* Ensure it's on top of other elements */
+}
+
+
     
