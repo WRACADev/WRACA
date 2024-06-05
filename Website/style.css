@@ -2,12 +2,13 @@
     font-family: '1';
     src: url(font/font.otf);  /*HELLOOOO TESTING*/
 }
-
 body {
     background-color: black;
     font-family: 'Orbitron', sans-serif;
-    overflow: hidden;
+    overflow-y: auto; 
+    overflow-x: auto; 
 }
+
 
 .main {
     position: relative;
