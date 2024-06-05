@@ -20,6 +20,16 @@ $(document).ready(function () {
 });
 
 $(document).ready(function() {
+    // Show the main container and background elements
+    $("#main").css("display", "block");
+    $("#scrollingBG").css("display", "block");
+    $("#scrollingBG2").css("display", "grid");
+    $("#scrollingBG3").css("display", "block");
+    $("#scrollingBG4").css("display", "grid");
+    $("#bg1").css("display", "block");
+});
+
+$(document).ready(function() {
     $(".dropbtn").click(function() {
         $(".dropdown-content").toggle();
     });
