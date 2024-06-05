@@ -19,7 +19,7 @@ body {
     border-width: 10px;
     width: 1600px;
     height: 960px;
-    overflow: hidden;
+    overflow: none;
     z-index: 50;
     user-select: none;
     background-color: rgb(255, 255, 255);
