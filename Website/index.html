@@ -9,117 +9,6 @@
   <script type="text/javascript" src="script.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
-    body {
-      background-color: black;
-      font-family: 'Orbitron', sans-serif;
-    }
-
-    .logo {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      width: 100px;
-      height: auto;
-    }
-
-    /* Add this to your existing CSS */
-
-    /* Home Section */
-    #home {
-      text-align: center;
-      color: black;
-      margin-top: 50px;
-      position: relative;
-      z-index: 100;
-      display: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    #home h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-
-    #home .home-content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 100px;
-    }
-
-    #home .home-content p {
-      font-size: 1.2em;
-      margin-right: 20px;
-    }
-
-    #home .home-content img {
-      width: 300px;
-      height: auto;
-    }
-
-    /* Events Section */
-    #events {
-      padding: 20px;
-      color: white;
-      position: relative;
-      z-index: 100;
-      display: none;
-    }
-
-    #eventFeed .event-post {
-      margin-bottom: 20px;
-    }
-
-    #eventFeed .event-post img {
-      width: 100%;
-      height: auto;
-    }
-
-    #eventFeed .event-post p {
-      font-size: 1.2em;
-      margin-top: 10px;
-    }
-
-    /* Artist Showcase Section */
-    #artist-showcase {
-      padding: 20px;
-      color: white;
-      position: relative;
-      z-index: 100;
-      display: none;
-    }
-
-    .artist-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .artist-entry {
-      text-align: center;
-    }
-
-    .artist-entry img {
-      width: 100%;
-      height: auto;
-    }
-
-    .artist-entry p {
-      font-size: 1.2em;
-      margin-top: 10px;
-    }
-
-    /* TBA Sections */
-    #news, #gallery, #radio, #contact {
-      padding: 20px;
-      color: white;
-      position: relative;
-      z-index: 100;
-      display: none;
-    }
   </style>
 </head>
 <body>
@@ -147,6 +36,16 @@
     <div class="scrollingBG3" id="scrollingBG3"></div>
     <div class="scrollingBG4" id="scrollingBG4"></div>
     <div class="bg1" id="bg1"></div>
+
+    <div class="floatingSquare"></div>
+    <div class="floatingSquare"></div>
+    <div class="floatingSquare"></div>
+    <div class="rotatingSquare"></div>
+    <div class="rotatingSquare"></div>
+    <div class="rotatingSquare"></div>
+    <div class="scalingSquare"></div>
+    <div class="scalingSquare"></div>
+    <div class="scalingSquare"></div>
 
     <!-- Home Section -->
     <section id="home" class="content-section">
