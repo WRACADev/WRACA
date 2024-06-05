@@ -204,8 +204,19 @@ body {
     }
 }
 
-.floatingSquare {
+.animated-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-gap: 20px;
     position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.floatingSquare {
     width: 100px;
     height: 100px;
     background-color: rgba(255, 255, 255, 0.3);
@@ -214,7 +225,6 @@ body {
 }
 
 .rotatingSquare {
-    position: absolute;
     width: 80px;
     height: 80px;
     background-color: rgba(255, 0, 0, 0.3);
@@ -223,23 +233,9 @@ body {
 }
 
 .scalingSquare {
-    position: absolute;
     width: 120px;
     height: 120px;
     background-color: rgba(0, 255, 0, 0.3);
     border: 2px solid rgba(0, 255, 0, 0.5);
     animation: scale 4s ease-in-out infinite;
 }
-
-/* Positioning the new squares */
-.floatingSquare:nth-child(1) { top: 10%; left: 20%; }
-.floatingSquare:nth-child(2) { top: 30%; left: 50%; }
-.floatingSquare:nth-child(3) { top: 50%; left: 70%; }
-
-.rotatingSquare:nth-child(1) { top: 20%; left: 30%; }
-.rotatingSquare:nth-child(2) { top: 40%; left: 60%; }
-.rotatingSquare:nth-child(3) { top: 60%; left: 80%; }
-
-.scalingSquare:nth-child(1) { top: 15%; left: 40%; }
-.scalingSquare:nth-child(2) { top: 45%; left: 20%; }
-.scalingSquare:nth-child(3) { top: 75%; left: 50%; }
