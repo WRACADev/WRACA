@@ -1,6 +1,22 @@
 @font-face {
-    font-family: '1';
-    src: url(font/font.otf);  /*HELLOOOO TESTING*/
+    font-family: 'Rodin NTLG';
+    src: url('path/to/rodin_ntlg_font.otf'); /* Update the path accordingly */
+}
+
+body {
+    font-family: 'Rodin NTLG', sans-serif;
+    color: black;
+}
+
+.content-section {
+    color: black;
+    font-family: 'Rodin NTLG', sans-serif;
+}
+
+.social-media img {
+    height: 32px; /* Adjust size as needed */
+    width: 32px;
+    margin: 5px; /* Optional: To add some spacing between icons */
 }
 
 .main{
