@@ -7,15 +7,10 @@ body {
     font-family: 'Rodin NTLG', sans-serif;
     color: black;
 }
-
-.content-section {
-    color: black;
-    font-family: 'Rodin NTLG', sans-serif;
-}
 .content-section h1, .content-section h2, .content-section p {
-    color: black !important;
-    font-family: 'Rodin NTLG', sans-serif !important;
-    animation: none !important; /* Disable any animations on these elements */
+    color: black ;
+    font-family: 'Rodin NTLG', sans-serif;
+    animation: none;
 }
 .social-media img {
     height: 32px; /* Adjust size as needed */
