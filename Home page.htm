@@ -10,104 +10,111 @@ To use this code, simply copy and paste it into an HTML file and open it in a we
 -->
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
 
-        .container {
-            width: 300px;
-            padding: 16px;
-            background-color: white;
-            margin: 0 auto;
-            margin-top: 100px;
-            border: 1px solid black;
-            border-radius: 4px;
-        }
+      .container {
+        width: 300px;
+        padding: 16px;
+        background-color: white;
+        margin: 0 auto;
+        margin-top: 100px;
+        border: 1px solid black;
+        border-radius: 4px;
+      }
 
-        input[type=text], input[type=password] {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
 
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
 
-        .welcome {
-            display: none;
-            text-align: center;
-            margin-top: 20px;
-        }
+      .welcome {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+      }
 
-        .welcome.active {
-            display: block;
-            animation: welcome 2s;
-        }
+      .welcome.active {
+        display: block;
+        animation: welcome 2s;
+      }
 
-        @keyframes welcome {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+      @keyframes welcome {
+        0% {
+          opacity: 0;
         }
+        100% {
+          opacity: 1;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="container">
+      <label for="WRCA"><b>WRCA</b></label>
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" id="uname" required />
 
-<div class="container">
-    <label for="WRCA"><b>WRCA</b></label>
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" id="uname" required>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" id="psw" required />
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" id="psw" required>
+      <button type="submit" id="login" onclick="login()">Login</button>
+      <button type="button" id="forgot" onclick="forgotPassword()">
+        Forgot password
+      </button>
+    </div>
 
-    <button type="submit" id="login" onclick="login()">Login</button>
-    <button type="button" id="forgot" onclick="forgotPassword()">Forgot password</button>
-</div>
+    <div class="welcome" id="welcome">
+      <h2>Welcome to the site!</h2>
+    </div>
 
-<div class="welcome" id="welcome">
-    <h2>Welcome to the site!</h2>
-</div>
+    <script>
+      function login() {
+        document.getElementById("welcome").classList.add("active");
+      }
 
-<script>
-    function login() {
-        document.getElementById('welcome').classList.add('active');
-    }
-
-    function forgotPassword() {
+      function forgotPassword() {
         // Redirect to the forgot password page
         // window.location.href = "/forgot-password";
-    }
+      }
 
-    function toggleElement(id) {
+      function toggleElement(id) {
         var element = document.getElementById(id);
         if (element.style.display === "none") {
-            element.style.display = "block";
+          element.style.display = "block";
         } else {
-            element.style.display = "none";
+          element.style.display = "none";
         }
-    }
-</script>
+      }
+    </script>
 
-<button onclick="toggleElement('login')">Toggle Login Button</button>
-<button onclick="toggleElement('forgot')">Toggle Forgot Password Button</button>
-<button onclick="toggleElement('uname')">Toggle Username Box</button>
-<button onclick="toggleElement('psw')">Toggle Password Box</button>
-<button onclick="toggleElement('logo')">Toggle Logo Text Area</button>
-
-</body>
+    <button onclick="toggleElement('login')">Toggle Login Button</button>
+    <button onclick="toggleElement('forgot')">
+      Toggle Forgot Password Button
+    </button>
+    <button onclick="toggleElement('uname')">Toggle Username Box</button>
+    <button onclick="toggleElement('psw')">Toggle Password Box</button>
+    <button onclick="toggleElement('logo')">Toggle Logo Text Area</button>
+  </body>
 </html>
