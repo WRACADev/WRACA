@@ -14,10 +14,53 @@ body {
   font-family: "Rodin NTLG", sans-serif;
   animation: none;
 }
-.social-media img {
-  height: 32px; /* Adjust size as needed */
+
+.birdApp-icon {
+  background-image: url("/Website/images/twittard.png");
+  background-size: contain;
   width: 32px;
-  margin: 5px; /* Optional: To add some spacing between icons */
+  height: 32px;
+  margin: 7px;
+}
+
+.instagram-icon {
+  background-image: url("/Website/images/instagram.png");
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+  margin: 7px;
+}
+
+.spotify-icon {
+  background-image: url("/Website/images/spopify.jpg");
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+  margin: 7px;
+}
+
+.bandcamp-icon {
+  background-image: url("/Website/images/bandcamp.png");
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+  margin: 7px;
+}
+
+.apple-icon {
+  background-image: url("/Website/images/appleMewsic.png");
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+  margin: 7px;
+}
+
+.youtube-icon {
+  background-image: url("Dont got one");
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+  margin: 7px;
 }
 
 .main {
@@ -34,6 +77,7 @@ body {
   z-index: 50;
 
   -webkit-user-select: none;
+  user-select: none;
   background-color: rgb(255, 255, 255);
 }
 
