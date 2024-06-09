@@ -15,52 +15,58 @@ body {
   animation: none;
 }
 
-.birdApp-icon {
-  background-image: url("/Website/images/twittard.png");
+.X-icon {
+  background-image: url("images/X.png");
   background-size: contain;
-  width: 32px;
-  height: 32px;
-  margin: 7px;
+  width: 35px;
+  height: 35px;
+  margin: 3px;
+  display: inline-block;
 }
 
 .instagram-icon {
-  background-image: url("/Website/images/instagram.png");
+  background-image: url("images/instagram.png");
   background-size: contain;
-  width: 32px;
-  height: 32px;
-  margin: 7px;
+  width: 35px;
+  height: 35px;
+  margin: 3px;
+  display: inline-block;
 }
 
 .spotify-icon {
-  background-image: url("/Website/images/spopify.jpg");
+  background-image: url("images/spotify.png");
   background-size: contain;
-  width: 32px;
-  height: 32px;
-  margin: 7px;
+  width: 35px;
+  height: 35px;
+  margin: 3px;
+  display: inline-block;
 }
 
 .bandcamp-icon {
-  background-image: url("/Website/images/bandcamp.png");
+  background-image: url("images/bandcamp.png");
   background-size: contain;
-  width: 32px;
-  height: 32px;
-  margin: 7px;
+  width: 35px;
+  height: 35px;
+  margin: 3px;
+  display: inline-block;
 }
 
 .apple-icon {
-  background-image: url("/Website/images/appleMewsic.png");
+  background-image: url("images/appleMusic.png");
   background-size: contain;
-  width: 32px;
-  height: 32px;
-  margin: 7px;
+  width: 35px;
+  height: 35px;
+  margin: 3px;
+  display: inline-block;
 }
 
 .youtube-icon {
-  background-image: url("Dont got one");
+  background-image: url("images/youtube.png");
   background-size: contain;
-  width: 32px;
-  height: 32px;
-  margin: 7px;
+  width: 35px;
+  height: 35px;
+  margin: 3px;
+  display: inline-block;
 }
 
 .main {
