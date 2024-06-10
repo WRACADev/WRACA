@@ -140,34 +140,3 @@ $(document).ready(function () {
     });
   }); 
 });
-
-function addEvent(eventImage, eventDescription, eventDates, eventLocation) {
-    const eventFeed = document.getElementById('eventFeed');
-    const eventPost = document.createElement('div');
-    eventPost.className = 'event-post';
-
-    const img = document.createElement('img');
-    img.src = eventImage;
-    img.alt = 'Event Poster';
-    img.style.width = '100%';
-    img.style.height = 'auto';
-
-    const description = document.createElement('p');
-    description.textContent = eventDescription;
-
-    const dates = document.createElement('p');
-    dates.textContent = eventDates;
-
-    const location = document.createElement('p');
-    location.textContent = eventLocation;
-
-    eventPost.appendChild(img);
-    eventPost.appendChild(description);
-    eventPost.appendChild(dates);
-    eventPost.appendChild(location);
-
-    eventFeed.appendChild(eventPost);
-}
-
-addEvent('images/The Darkbulb Shows - Main Poster(1).jpg', 'WRACA is proud to introduce "The Darkbulb Shows," a diverse array of exceptional bulb-breaking performances...', 'July 4th, 11th, 25th, August 3rd', 'Loophole Coffee Bar');
-
