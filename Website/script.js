@@ -17,6 +17,18 @@ $(document).ready(function () {
   });
 });
 
+$(document).ready(function() {
+  // Hide the old backgrounds
+  $('.scrollingBG, .scrollingBG2, .scrollingBG3, .scrollingBG4, .bg1').hide();
+
+  // Initialize the new background animation
+  $('#newScrollingBG').show().css({
+    'background': 'linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)',
+    'animation': 'newBackgroundAnimation 20s linear infinite'
+  });
+});
+
+
 $(document).ready(function () {
   // Show the main container and background elements
   $("#main").css("display", "block");
