@@ -7,6 +7,38 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
+    <style>
+      /* Ensure the event section and poster take up the full page */
+      .content-section {
+        display: none;
+        z-index: 1000;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .event-post {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .event-post img {
+        width: 100%;
+        height: auto;
+        max-height: 90%;
+      }
+
+      .event-post p {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
 </head>
 <body>
     <!-- Dropdown Menu -->
