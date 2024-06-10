@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <title>Home Page</title>
   <head>
     <meta
       name="viewport"
@@ -13,7 +12,6 @@
         margin: 0;
         padding: 0;
       }
-
       .container {
         width: 300px;
         padding: 16px;
@@ -23,7 +21,6 @@
         border: 1px solid black;
         border-radius: 4px;
       }
-
       input[type="text"],
       input[type="password"] {
         width: 100%;
@@ -33,7 +30,6 @@
         border: 1px solid #ccc;
         box-sizing: border-box;
       }
-
       button {
         background-color: #4caf50;
         color: white;
@@ -43,18 +39,15 @@
         cursor: pointer;
         width: 100%;
       }
-
       .welcome {
         display: none;
         text-align: center;
         margin-top: 20px;
       }
-
       .welcome.active {
         display: block;
         animation: welcome 2s;
       }
-
       @keyframes welcome {
         0% {
           opacity: 0;
@@ -64,52 +57,31 @@
         }
       }
     </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
   </head>
   <body>
     <div class="container">
-      <label for="WRCA"><b>WRCA</b></label>
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" id="uname" required />
-
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" id="psw" required />
-
-      <button type="submit" id="login" onclick="login()">Login</button>
-      <button type="button" id="forgot" onclick="forgotPassword()">
-        Forgot password
-      </button>
+      <button type="submit" id="login">Login</button>
     </div>
-
     <div class="welcome" id="welcome">
       <h2>Welcome to the site!</h2>
     </div>
-
     <script>
-      function login() {
-        document.getElementById("welcome").classList.add("active");
-      }
-
-      function forgotPassword() {
-        // Redirect to the forgot password page
-        // window.location.href = "/forgot-password";
-      }
-
-      function toggleElement(id) {
-        var element = document.getElementById(id);
-        if (element.style.display === "none") {
-          element.style.display = "block";
-        } else {
-          element.style.display = "none";
-        }
-      }
+      $('#login').click(function() {
+        const username = $('#uname').val();
+        const password = $('#psw').val();
+        $.post('/login', { username, password }, function(data) {
+          if (data === 'Login successful') {
+            window.location.href = 'index.html';
+          } else {
+            alert('Invalid username or password');
+          }
+        });
+      });
     </script>
-
-    <button onclick="toggleElement('login')">Toggle Login Button</button>
-    <button onclick="toggleElement('forgot')">
-      Toggle Forgot Password Button
-    </button>
-    <button onclick="toggleElement('uname')">Toggle Username Box</button>
-    <button onclick="toggleElement('psw')">Toggle Password Box</button>
-    <button onclick="toggleElement('logo')">Toggle Logo Text Area</button>
   </body>
 </html>
