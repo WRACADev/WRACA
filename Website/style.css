@@ -2,6 +2,27 @@
   font-family: "Rodin NTLG";
   src: url("path/to/rodin_ntlg_font.otf"); /* Update the path accordingly */
 }
+/* style.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.content-section {
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+.event-post img {
+    width: 100%;
+    height: auto;
+}
 
 body {
   font-family: "Rodin NTLG", sans-serif;
