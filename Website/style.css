@@ -2,7 +2,7 @@
   font-family: "Rodin NTLG";
   src: url("path/to/rodin_ntlg_font.otf"); /* Update the path accordingly */
 }
-/* style.css */
+
 body, html {
     margin: 0;
     padding: 0;
@@ -108,178 +108,24 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
-.scrollingBG {
-  width: 1600px;
-  object-fit: none;
-  opacity: 0.7;
-  display: none;
-  height: 960px;
+.newScrollingBG {
+  width: 100%;
+  height: 100%;
   position: absolute;
-  border: none;
-  background: conic-gradient(
-      from -90deg at calc(100% - 4.2px) calc(100% - 4.2px),
-      #0000 0 90deg,
-      #daefda 0
-    ),
-    conic-gradient(
-      from -90deg at calc(100% - 4.2px) calc(100% - 4.2px),
-      #0000 0 90deg,
-      #daefda 0
-    );
-  background-size: 250px 250px;
-  animation: hypnotic-p6wowimd 40.4s infinite;
-  filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
-  z-index: 8;
+  z-index: -1;
+  background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+  animation: newBackgroundAnimation 20s linear infinite;
 }
 
-@keyframes hypnotic-p6wowimd {
-  100% {
-    background-position: -250px -250px, 250px 250px;
-  }
-}
-.scrollingBG4 {
-  width: 1000px;
-  filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
-  height: 1000px;
-  left: 1600px;
-  top: 200px;
-  display: grid;
-  position: absolute;
-  z-index: 6;
-  opacity: 0.5;
-  border: none;
-  border: 150.5px solid #0000;
-  border-radius: 50%;
-  border-right-color: #cbdbc8;
-  animation: spinner-a4dj62 20s infinite linear;
-}
-
-.scrollingBG4::before,
-.scrollingBG4::after {
-  content: "";
-  grid-area: 1/1;
-  margin: 200.2px;
-  border: inherit;
-  border-radius: 50%;
-  animation: spinner-a4dj62 40s infinite;
-}
-
-.scrollingBG4::after {
-  margin: 20.9px;
-  animation-duration: 60s;
-}
-
-@keyframes spinner-a4dj62 {
-  100% {
-    transform: rotate(1turn);
-  }
-}
-.scrollingBG3 {
-  width: 1600px;
-  height: 960px;
-  opacity: 0.6;
-  display: none;
-  position: absolute;
-  border: none;
-  border: 3px solid #e5fae3;
-  background: radial-gradient(
-      farthest-side,
-      #0000 calc(100% - 5.3px),
-      #e5fae3 calc(100% - 3.5px) 98%,
-      #0000
-    ),
-    radial-gradient(
-      farthest-side,
-      #0000 calc(100% - 5.3px),
-      #e5fae3 calc(100% - 3.5px) 98%,
-      #0000
-    );
-  background-size: 300px 300px;
-  background-position: 0 0, 156.2px 156.2px;
-  animation: hypnotic-218taehg 40.4s infinite;
-  z-index: 7;
-  filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
-}
-
-@keyframes hypnotic-218taehg {
-  100% {
-    background-position: -300px 0px, 156.2px 456.3px;
-  }
-}
-.scrollingBG2 {
-  width: 2600px;
-  height: 2600px;
-  display: grid;
-  position: absolute;
-  z-index: 6;
-  opacity: 0.25;
-  border: none;
-  z-index: 6;
-  left: -3000px;
-  filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
-  top: -1500px;
-}
-
-.scrollingBG2::before,
-.scrollingBG2::after {
-  content: "";
-  grid-area: 1/1;
-  border-radius: 50%;
-  background: repeating-conic-gradient(
-    #0000,
-    #9ac4a6 1deg 18deg,
-    #0000 20deg 36deg
-  );
-  -webkit-mask: repeating-radial-gradient(
-    farthest-side,
-    #000 0 10%,
-    #0000 0 20%
-  );
-  animation: scrollingBG2-5m0nuf 80s infinite linear;
-}
-
-.scrollingBG2::after {
-  -webkit-mask: repeating-radial-gradient(
-    farthest-side,
-    #0000 0 10%,
-    #000 0 20%
-  );
-  animation-direction: reverse;
-}
-
-@keyframes scrollingBG2-5m0nuf {
-  100% {
-    transform: rotate(0.5turn);
-  }
-}
-
-.bg1 {
-  object-fit: none;
-  display: none;
-  width: 1600px;
-  height: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  content: url("images/bg1.png");
-  position: absolute;
-  z-index: 5;
-  animation: hue 3s linear 0s infinite normal forwards;
-}
-@keyframes hue {
+@keyframes newBackgroundAnimation {
   0% {
-    filter: hue-rotate(0deg);
-  }
-  25% {
-    filter: hue-rotate(180deg);
+    background-position: 0% 50%;
   }
   50% {
-    filter: hue-rotate(360deg);
-  }
-  75% {
-    filter: hue-rotate(180deg);
+    background-position: 100% 50%;
   }
   100% {
-    filter: hue-rotate(0deg);
+    background-position: 0% 50%;
   }
 }
 
