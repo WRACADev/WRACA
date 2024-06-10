@@ -29,9 +29,10 @@
       }
 
       .event-post img {
-        width: 100%;
-        height: auto;
-        max-height: 90%;
+        width: auto;
+        height: 90vh;
+        max-width: 100%;
+        object-fit: contain;
       }
 
       .event-post p {
@@ -91,15 +92,22 @@
         </section>
 
         <!-- Events Section -->
-        <section id="events" class="content-section" style="display: none;">
+        <section id="events" class="content-section">
             <h2>Upcoming Events</h2>
             <div id="eventFeed">
-                <!-- Dynamic Event Posts Will Be Added Here by JavaScript -->
+                <!-- Dynamic Event Posts Here -->
+                <div class="event-post">
+                    <img src="images/The Darkbulb Shows - Main Poster(1).jpg" alt="The Darkbulb Shows Poster" />
+                    <p>WRACA is proud to introduce "The Darkbulb Shows," a diverse array of exceptional bulb-breaking performances featuring some amazing artists. This series spans various genres, including electronic (IDM, breakcore, glitch, EDM, electronica, techno, noise), rap (trap, experimental trap), and rock (lofi, noise rock, punk). Each show promises a unique, bulbous, and immersive experience.</p>
+                    <p>Dates and Location:</p>
+                    <p>Loophole Coffee Bar</p>
+                    <p>July 4th, 11th, 25th, August 3rd</p>
+                </div>
             </div>
         </section>
 
         <!-- Artist Showcase Section -->
-        <section id="artist-showcase" class="content-section" style="display: none;">
+        <section id="artist-showcase" class="content-section">
             <h2>Artist Showcase</h2>
             <div class="artist-grid">
                 <!-- Example Artist Entry -->
@@ -111,25 +119,25 @@
         </section>
 
         <!-- News Section -->
-        <section id="news" class="content-section" style="display: none;">
+        <section id="news" class="content-section">
             <h2>News</h2>
             <p>TBA</p>
         </section>
 
         <!-- Gallery Section -->
-        <section id="gallery" class="content-section" style="display: none;">
+        <section id="gallery" class="content-section">
             <h2>Gallery</h2>
             <p>TBA</p>
         </section>
 
         <!-- Radio Section -->
-        <section id="radio" class="content-section" style="display: none;">
+        <section id="radio" class="content-section">
             <h2>Radio</h2>
             <p>TBA</p>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="content-section" style="display: none;">
+        <section id="contact" class="content-section">
             <h2>Contact</h2>
             <p>TBA</p>
         </section>
@@ -194,8 +202,6 @@
             const img = document.createElement('img');
             img.src = eventImage;
             img.alt = 'Event Poster';
-            img.style.width = '100%';
-            img.style.height = 'auto';
 
             const description = document.createElement('p');
             description.textContent = eventDescription;
