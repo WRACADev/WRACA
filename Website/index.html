@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-      charset="utf-8" />
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
     <title>index</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <!-- Dropdown Menu -->
     <div class="dropdown">
-      <button class="dropbtn">Sections</button>
-      <div class="dropdown-content">
-        <a href="#" onclick="showSection('home')">Home</a>
-        <a href="#" onclick="showSection('news')">News</a>
-        <a href="#" onclick="showSection('events')">Events</a>
-        <a href="#" onclick="showSection('gallery')">Gallery</a>
-        <a href="#" onclick="showSection('artist-showcase')">Artist Showcase</a>
-        <a href="#" onclick="showSection('radio')">Radio</a>
-        <a href="#" onclick="showSection('contact')">Contact</a>
-      </div>
+        <button class="dropbtn">Sections</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('news')">News</a>
+            <a href="#" onclick="showSection('events')">Events</a>
+            <a href="#" onclick="showSection('gallery')">Gallery</a>
+            <a href="#" onclick="showSection('artist-showcase')">Artist Showcase</a>
+            <a href="#" onclick="showSection('radio')">Radio</a>
+            <a href="#" onclick="showSection('contact')">Contact</a>
+        </div>
     </div>
 
     <!-- Logo Placeholder -->
@@ -33,112 +28,79 @@
 
     <br /><br />
     <div class="main" id="main">
-      <div class="scrollingBG" id="scrollingBG"></div>
-      <div class="scrollingBG2" id="scrollingBG2"></div>
-      <div class="scrollingBG3" id="scrollingBG3"></div>
-      <div class="scrollingBG4" id="scrollingBG4"></div>
-      <div class="bg1" id="bg1"></div>
+        <div class="scrollingBG" id="scrollingBG"></div>
+        <div class="scrollingBG2" id="scrollingBG2"></div>
+        <div class="scrollingBG3" id="scrollingBG3"></div>
+        <div class="scrollingBG4" id="scrollingBG4"></div>
+        <div class="bg1" id="bg1"></div>
 
-      <!-- Grid of animated squares -->
-      <div class="animated-grid">
-        <div class="floatingSquare"></div>
-        <div class="rotatingSquare"></div>
-        <div class="scalingSquare"></div>
-        <div class="floatingSquare"></div>
-        <div class="rotatingSquare"></div>
-        <div class="scalingSquare"></div>
-        <div class="floatingSquare"></div>
-        <div class="rotatingSquare"></div>
-        <div class="scalingSquare"></div>
-      </div>
-
-      <!-- Home Section -->
-      <section
-        id="home"
-        class="content-section"
-        style="z-index: 1000; position: relative">
-        <h1>We are Here. We are Real. We are WRACA.</h1>
-        <div class="home-content">
-          <p>
-            Welcome to WRACA, where we bring you the best in music, events, and
-            more. Stay tuned for updates and exciting content!
-          </p>
-          <img src="images/homepage.jpg" alt="Homepage Image" />
-          <br /><br />
-          <button onclick="location.href='loginPage.html'">Login</button>
+        <!-- Grid of animated squares -->
+        <div class="animated-grid">
+            <div class="floatingSquare"></div>
+            <div class="rotatingSquare"></div>
+            <div class="scalingSquare"></div>
+            <div class="floatingSquare"></div>
+            <div class="rotatingSquare"></div>
+            <div class="scalingSquare"></div>
+            <div class="floatingSquare"></div>
+            <div class="rotatingSquare"></div>
+            <div class="scalingSquare"></div>
         </div>
-      </section>
 
-      <!-- Events Section -->
-      <section id="events" class="content-section" style="display: none; z-index: 1000; position: relative; overflow-y: scroll; max-height: 400px;">
-          <h2>Upcoming Events</h2>
-          <div id="eventFeed">
-              <!-- Dynamic Event Posts Here -->
-              <div class="event-post">
-                  <img src="images/The Darkbulb Shows - Main Poster(1).jpg" alt="The Darkbulb Shows Poster" style="width: 100%; height: auto" />
-                  <p>WRACA is proud to introduce "The Darkbulb Shows," a diverse array of exceptional bulb-breaking performances featuring some amazing artists. This series spans various genres, including electronic (IDM, breakcore, glitch, EDM, electronica, techno, noise), rap (trap, experimental trap), and rock (lofi, noise rock, punk). Each show promises a unique, bulbous, and immersive experience.</p>
-                  <p>Dates and Location:</p>
-                  <p>Loophole Coffee Bar</p>
-                  <p>July 4th, 11th, 25th, August 3rd</p>
-              </div>
-          </div>
-      </section>
+        <!-- Home Section -->
+        <section id="home" class="content-section">
+            <h1>We are Here. We are Real. We are WRACA.</h1>
+            <div class="home-content">
+                <p>Welcome to WRACA, where we bring you the best in music, events, and more. Stay tuned for updates and exciting content!</p>
+                <img src="images/homepage.jpg" alt="Homepage Image" />
+                <br /><br />
+                <button onclick="location.href='loginPage.html'">Login</button>
+            </div>
+        </section>
 
-      <!-- Artist Showcase Section -->
-      <section
-        id="artist-showcase"
-        class="content-section"
-        style="display: none; z-index: 1000; position: relative">
-        <h2>Artist Showcase</h2>
-        <div class="artist-grid">
-          <!-- Example Artist Entry -->
-          <div class="artist-entry">
-            <img
-              src="path/to/artist_image.png"
-              alt="Artist Image"
-              style="width: 100%; height: auto" />
-            <p>
-              Artist Description with <a href="link_to_music">links to music</a>
-            </p>
-          </div>
-        </div>
-      </section>
+        <!-- Events Section -->
+        <section id="events" class="content-section" style="display: none;">
+            <h2>Upcoming Events</h2>
+            <div id="eventFeed">
+                <!-- Dynamic Event Posts Will Be Added Here by JavaScript -->
+            </div>
+        </section>
 
-      <!-- News Section -->
-      <section
-        id="news"
-        class="content-section"
-        style="display: none; z-index: 1000; position: relative">
-        <h2>News</h2>
-        <p>TBA</p>
-      </section>
+        <!-- Artist Showcase Section -->
+        <section id="artist-showcase" class="content-section" style="display: none;">
+            <h2>Artist Showcase</h2>
+            <div class="artist-grid">
+                <!-- Example Artist Entry -->
+                <div class="artist-entry">
+                    <img src="path/to/artist_image.png" alt="Artist Image" />
+                    <p>Artist Description with <a href="link_to_music">links to music</a></p>
+                </div>
+            </div>
+        </section>
 
-      <!-- Gallery Section -->
-      <section
-        id="gallery"
-        class="content-section"
-        style="display: none; z-index: 1000; position: relative">
-        <h2>Gallery</h2>
-        <p>TBA</p>
-      </section>
+        <!-- News Section -->
+        <section id="news" class="content-section" style="display: none;">
+            <h2>News</h2>
+            <p>TBA</p>
+        </section>
 
-      <!-- Radio Section -->
-      <section
-        id="radio"
-        class="content-section"
-        style="display: none; z-index: 1000; position: relative">
-        <h2>Radio</h2>
-        <p>TBA</p>
-      </section>
+        <!-- Gallery Section -->
+        <section id="gallery" class="content-section" style="display: none;">
+            <h2>Gallery</h2>
+            <p>TBA</p>
+        </section>
 
-      <!-- Contact Section -->
-      <section
-        id="contact"
-        class="content-section"
-        style="display: none; z-index: 1000; position: relative">
-        <h2>Contact</h2>
-        <p>TBA</p>
-      </section>
+        <!-- Radio Section -->
+        <section id="radio" class="content-section" style="display: none;">
+            <h2>Radio</h2>
+            <p>TBA</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="content-section" style="display: none;">
+            <h2>Contact</h2>
+            <p>TBA</p>
+        </section>
     </div>
 
     <!-- Social Media Links -->
@@ -163,35 +125,67 @@
         </a>
     </div>
 
-
     <!-- Popup Form -->
     <div id="popupForm" class="popup-form">
-      <div class="form-content">
-        <span class="close-btn">&times;</span>
-        <h2>Select Forum</h2>
-        <div id="forumList" class="forum-list">
-          <!-- Forum buttons will be inserted here dynamically -->
+        <div class="form-content">
+            <span class="close-btn">&times;</span>
+            <h2>Select Forum</h2>
+            <div id="forumList" class="forum-list">
+                <!-- Forum buttons will be inserted here dynamically -->
+            </div>
+            <div id="chatContainer" class="chat-container" style="display: none;">
+                <h2 id="forumTitle"></h2>
+                <div id="chatBox" class="chat-box"></div>
+                <form id="chatForm">
+                    <input type="text" id="chatInput" name="chatInput" placeholder="Type your message..." required />
+                    <button type="submit">Send</button>
+                </form>
+            </div>
         </div>
-        <div id="chatContainer" class="chat-container" style="display: none">
-          <h2 id="forumTitle"></h2>
-          <div id="chatBox" class="chat-box"></div>
-          <form id="chatForm">
-            <input type="text" id="chatInput" name="chatInput" placeholder="Type your message..." required />
-            <button type="submit">Send</button>
-          </form>
-        </div>
-      </div>
     </div>
 
     <button id="openFormBtn">Open Chat</button>
 
     <script>
-      function showSection(sectionId) {
-        document.querySelectorAll(".content-section").forEach((section) => {
-          section.style.display = "none";
+        function showSection(sectionId) {
+            document.querySelectorAll(".content-section").forEach((section) => {
+                section.style.display = "none";
+            });
+            document.getElementById(sectionId).style.display = "block";
+        }
+
+        function addEvent(eventImage, eventDescription, eventDates, eventLocation) {
+            const eventFeed = document.getElementById('eventFeed');
+            const eventPost = document.createElement('div');
+            eventPost.className = 'event-post';
+
+            const img = document.createElement('img');
+            img.src = eventImage;
+            img.alt = 'Event Poster';
+            img.style.width = '100%';
+            img.style.height = 'auto';
+
+            const description = document.createElement('p');
+            description.textContent = eventDescription;
+
+            const dates = document.createElement('p');
+            dates.textContent = eventDates;
+
+            const location = document.createElement('p');
+            location.textContent = eventLocation;
+
+            eventPost.appendChild(img);
+            eventPost.appendChild(description);
+            eventPost.appendChild(dates);
+            eventPost.appendChild(location);
+
+            eventFeed.appendChild(eventPost);
+        }
+
+        // Example usage
+        document.addEventListener('DOMContentLoaded', () => {
+            addEvent('images/The Darkbulb Shows - Main Poster(1).jpg', 'WRACA is proud to introduce "The Darkbulb Shows," a diverse array of exceptional bulb-breaking performances...', 'July 4th, 11th, 25th, August 3rd', 'Loophole Coffee Bar');
         });
-        document.getElementById(sectionId).style.display = "block";
-      }
     </script>
-  </body>
+</body>
 </html>
