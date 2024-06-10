@@ -8,7 +8,30 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
     <style>
-      /* Ensure the event section and poster take up the full page */
+      body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
       .content-section {
         display: none;
         z-index: 1000;
@@ -41,6 +64,25 @@
         margin: 10px 0;
         padding: 0;
       }
+
+      .content-section#home {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .dropdown {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+
+      .wraca-logo {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
     </style>
 </head>
 <body>
@@ -61,7 +103,6 @@
     <!-- Logo Placeholder -->
     <img src="images/WRACAlogo.png" alt="WRACA Logo" class="wraca-logo" />
 
-    <br /><br />
     <div class="main" id="main">
         <div class="scrollingBG" id="scrollingBG"></div>
         <div class="scrollingBG2" id="scrollingBG2"></div>
@@ -123,7 +164,7 @@
         <!-- News Section -->
         <section id="news" class="content-section">
             <h2>News</h2>
-            <p>TBA</h2>
+            <p>TBA</p>
         </section>
 
         <!-- Gallery Section -->
@@ -224,6 +265,7 @@
 
         // Example usage
         document.addEventListener('DOMContentLoaded', () => {
+            showSection('home');  // Default to the homepage
             addEvent('images/The Darkbulb Shows - Main Poster(1).jpg', 'WRACA is proud to introduce "The Darkbulb Shows," a diverse array of exceptional bulb-breaking performances...', 'July 4th, 11th, 25th, August 3rd', 'Loophole Coffee Bar');
         });
     </script>
