@@ -1,7 +1,7 @@
 body {
     font-family: 'Rodin NTLG', sans-serif;
     color: black;
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(221,221,221,1) 100%);
+    background: linear-gradient(135deg, #000, #000 10px, #fff 10px, #fff 20px);
 }
 
 .content-section h1, .content-section h2, .content-section p {
@@ -32,16 +32,15 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background: repeating-conic-gradient(from 0deg, #000, #000 1deg, #fff 1deg, #fff 2deg);
-    mask-image: radial-gradient(circle, transparent 30%, black 70%);
-    z-index: 0;
+    background: repeating-linear-gradient(45deg, #000, #000 10px, #fff 10px, #fff 20px);
     opacity: 0.5;
     animation: fractal-spin 60s infinite linear;
+    z-index: 0;
 }
 
 @keyframes fractal-spin {
     100% {
-        transform: rotate(1turn);
+        background-position: 100% 100%;
     }
 }
 
@@ -79,7 +78,6 @@ body {
     opacity: 0.5;
     border: none;
     border: 150.5px solid #0000;
-    border-radius: 50%;
     border-right-color: #cbdbc8;
     animation: circle-spin 20s infinite linear;
 }
@@ -147,13 +145,13 @@ body {
     content: "";
     grid-area: 1/1;
     border-radius: 50%;
-    background: conic-gradient(from 0deg at center, #9ac4a6, #0000 30deg, #9ac4a6 60deg, #0000 90deg, #9ac4a6 120deg, #0000 150deg, #9ac4a6 180deg, #0000 210deg, #9ac4a6 240deg, #0000 270deg, #9ac4a6 300deg, #0000 330deg, #9ac4a6 360deg);
-    -webkit-mask: repeating-radial-gradient(farthest-side, #000 0 10%, #0000 0 20%);
+    background: repeating-linear-gradient(45deg, #9ac4a6, #9ac4a6 10px, #0000 10px, #0000 20px);
+    -webkit-mask: repeating-linear-gradient(45deg, #000 0 10%, #0000 0 20%);
     animation: scrollingBG2-5m0nuf 80s infinite linear;
 }
 
 .scrollingBG2::after {
-    -webkit-mask: repeating-radial-gradient(farthest-side, #0000 0 10%, #000 0 20%);
+    -webkit-mask: repeating-linear-gradient(45deg, #0000 0 10%, #000 0 20%);
     animation-direction: reverse;
 }
 
