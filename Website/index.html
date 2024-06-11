@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-      charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
     <title>index</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
   </head>
   <body>
@@ -18,13 +13,13 @@
     <div class="dropdown">
       <button class="dropbtn">Sections</button>
       <div class="dropdown-content">
-        <a href="#" onclick="showSection('home')">Home</a>
-        <a href="#" onclick="showSection('news')">News</a>
-        <a href="#" onclick="showSection('events')">Events</a>
-        <a href="#" onclick="showSection('gallery')">Gallery</a>
-        <a href="#" onclick="showSection('artist-showcase')">Artist Showcase</a>
-        <a href="#" onclick="showSection('radio')">Radio</a>
-        <a href="#" onclick="showSection('contact')">Contact</a>
+        <a href="#home" onclick="showSection('home')">Home</a>
+        <a href="#news" onclick="showSection('news')">News</a>
+        <a href="#events" onclick="showSection('events')">Events</a>
+        <a href="#gallery" onclick="showSection('gallery')">Gallery</a>
+        <a href="#artist-showcase" onclick="showSection('artist-showcase')">Artist Showcase</a>
+        <a href="#radio" onclick="showSection('radio')">Radio</a>
+        <a href="#contact" onclick="showSection('contact')">Contact</a>
       </div>
     </div>
 
@@ -55,15 +50,11 @@
       </div>
 
       <!-- Home Section -->
-      <section
-        id="home"
-        class="content-section"
-        style="z-index: 1000; position: relative">
+      <section id="home" class="content-section" style="z-index: 1000; position: relative;">
         <h1>We are Here. We are Real. We are WRACA.</h1>
         <div class="home-content">
           <p>
-            Welcome to WRACA, where we bring you the best in music, events, and
-            more. Stay tuned for updates and exciting content!
+            Welcome to WRACA, where we bring you the best in music, events, and more. Stay tuned for updates and exciting content!
           </p>
           <img src="images/homepage.jpg" alt="Homepage Image" />
           <br /><br />
@@ -77,7 +68,7 @@
           <div id="eventFeed">
               <!-- Dynamic Event Posts Here -->
               <div class="event-post">
-                  <img src="images/The Darkbulb Shows - Main Poster(1).jpg" alt="The Darkbulb Shows Poster" style="width: 100%; height: auto" />
+                  <img src="images/The Darkbulb Shows - Main Poster(1).jpg" alt="The Darkbulb Shows Poster" style="width: 100%; height: auto;" />
                   <p>WRACA is proud to introduce "The Darkbulb Shows," a diverse array of exceptional bulb-breaking performances featuring some amazing artists. This series spans various genres, including electronic (IDM, breakcore, glitch, EDM, electronica, techno, noise), rap (trap, experimental trap), and rock (lofi, noise rock, punk). Each show promises a unique, bulbous, and immersive experience.</p>
                   <p>Dates and Location:</p>
                   <p>Loophole Coffee Bar</p>
@@ -87,57 +78,37 @@
       </section>
 
       <!-- Artist Showcase Section -->
-      <section
-        id="artist-showcase"
-        class="content-section"
-        style="display: none; z-index: 1000; position: relative">
+      <section id="artist-showcase" class="content-section" style="display: none; z-index: 1000; position: relative;">
         <h2>Artist Showcase</h2>
         <div class="artist-grid">
           <!-- Example Artist Entry -->
           <div class="artist-entry">
-            <img
-              src="path/to/artist_image.png"
-              alt="Artist Image"
-              style="width: 100%; height: auto" />
-            <p>
-              Artist Description with <a href="link_to_music">links to music</a>
-            </p>
+            <img src="path/to/artist_image.png" alt="Artist Image" style="width: 100%; height: auto;" />
+            <p>Artist Description with <a href="link_to_music">links to music</a></p>
           </div>
         </div>
       </section>
 
       <!-- News Section -->
-      <section
-        id="news"
-        class="content-section"
-        style="display: none; z-index: 1000; position: relative">
+      <section id="news" class="content-section" style="display: none; z-index: 1000; position: relative;">
         <h2>News</h2>
         <p>TBA</p>
       </section>
 
       <!-- Gallery Section -->
-      <section
-        id="gallery"
-        class="content-section"
-        style="display: none; z-index: 1000; position: relative">
+      <section id="gallery" class="content-section" style="display: none; z-index: 1000; position: relative;">
         <h2>Gallery</h2>
         <p>TBA</p>
       </section>
 
       <!-- Radio Section -->
-      <section
-        id="radio"
-        class="content-section"
-        style="display: none; z-index: 1000; position: relative">
+      <section id="radio" class="content-section" style="display: none; z-index: 1000; position: relative;">
         <h2>Radio</h2>
         <p>TBA</p>
       </section>
 
       <!-- Contact Section -->
-      <section
-        id="contact"
-        class="content-section"
-        style="display: none; z-index: 1000; position: relative">
+      <section id="contact" class="content-section" style="display: none; z-index: 1000; position: relative;">
         <h2>Contact</h2>
         <p>TBA</p>
       </section>
@@ -164,7 +135,6 @@
             <img src="images/youtube.png" alt="YouTube Icon" class="social-icon">
         </a>
     </div>
-
 
     <!-- Popup Form -->
     <div id="popupForm" class="popup-form">
