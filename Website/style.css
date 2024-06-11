@@ -1,7 +1,3 @@
-@font-face {
-    font-family: 'Rodin NTLG';
-    src: url('path/to/rodin_ntlg_font.otf'); /* Update the path accordingly */
-}
 
 body {
     font-family: 'Rodin NTLG', sans-serif;
@@ -46,12 +42,12 @@ body {
         background: linear-gradient(from -90deg at calc(100% - 4.2px) calc(100% - 4.2px),#0000 0 90deg, #daefda 0),
                linear-gradient(from -90deg at calc(100% - 4.2px) calc(100% - 4.2px),#0000 0 90deg, #daefda 0);
         background-size: 250px 250px;
-        animation: hypnotic-p6wowimd 40.4s infinite;
+        animation: smooth-scroll 40.4s infinite;
         filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
         z-index: 8;
      }
      
-     @keyframes hypnotic-p6wowimd {
+     @keyframes smooth-scroll {
         100% {
            background-position: -250px -250px,250px 250px;
         }
@@ -135,7 +131,7 @@ body {
         content: "";
         grid-area: 1/1;
         border-radius: 50%;
-        background: repeating-linear-gradient(#0000,#9ac4a6 1deg 18deg,#0000 20deg 36deg);
+        background: conic-gradient(from 0deg at center, #9ac4a6, #0000 30deg, #9ac4a6 60deg, #0000 90deg, #9ac4a6 120deg, #0000 150deg, #9ac4a6 180deg, #0000 210deg, #9ac4a6 240deg, #0000 270deg, #9ac4a6 300deg, #0000 330deg, #9ac4a6 360deg);
         -webkit-mask: repeating-radial-gradient(farthest-side,#000 0 10%,#0000 0 20%);
         animation: scrollingBG2-5m0nuf 80s infinite linear;
      }
@@ -289,7 +285,6 @@ body {
 .chat-container {
     display: none;
 }
-
 .wraca-logo {
     position: absolute;
     top: 20px; /* Adjust as needed */
