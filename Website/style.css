@@ -1,7 +1,7 @@
 body {
     font-family: 'Rodin NTLG', sans-serif;
     color: black;
-    background: linear-gradient(135deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff);
+    background: linear-gradient(135deg, #000, #000 10px, #fff 10px, #fff 20px);
 }
 
 .content-section h1, .content-section h2, .content-section p {
@@ -32,16 +32,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background: repeating-linear-gradient(
-        45deg,
-        red,
-        orange 20px,
-        yellow 40px,
-        green 60px,
-        blue 80px,
-        indigo 100px,
-        violet 120px
-    );
+    background: repeating-linear-gradient(45deg, #000, #000 10px, #fff 10px, #fff 20px);
     opacity: 0.5;
     animation: fractal-spin 60s infinite linear;
     z-index: 0;
@@ -172,12 +163,12 @@ body {
 
 .bg1 {
     object-fit: none;
-    display: none;
+    display: block;
     width: 1600px;
     height: 960px;
     margin-left: auto;
     margin-right: auto;
-    content: url("images/bg1.png");
+    content: url("images/T5k3(1).gif");
     position: absolute;
     z-index: 5;
     animation: hue 3s linear 0s infinite normal forwards;
