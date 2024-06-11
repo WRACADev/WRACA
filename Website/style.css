@@ -1,155 +1,167 @@
-@font-face {
-    font-family: 'Rodin NTLG';
-    src: url('path/to/rodin_ntlg_font.otf'); /* Update the path accordingly */
-}
-
 body {
     font-family: 'Rodin NTLG', sans-serif;
     color: black;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(221,221,221,1) 100%);
 }
+
 .content-section h1, .content-section h2, .content-section p {
-    color: black ;
+    color: black;
     font-family: 'Rodin NTLG', sans-serif;
     animation: none;
 }
-.social-media img {
-    height: 32px; /* Adjust size as needed */
-    width: 32px;
-    margin: 5px; /* Optional: To add some spacing between icons */
-}
 
-.main{
+.main {
     position: relative;
     display: none;
     margin-right: auto;
     margin-left: auto;
-    border-style:solid;
+    border-style: solid;
     border-color: #000000;
     border-width: 10px;
     width: 1600px;
     height: 960px;
     overflow: hidden;
     z-index: 50;
-
     user-select: none;
-    background-color: rgb(255, 255, 255)
+    background-color: rgb(255, 255, 255);
+}
+
+.fractal-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: repeating-conic-gradient(from 0deg, #000, #000 1deg, #fff 1deg, #fff 2deg);
+    mask-image: radial-gradient(circle, transparent 30%, black 70%);
+    z-index: 0;
+    opacity: 0.5;
+    animation: fractal-spin 60s infinite linear;
+}
+
+@keyframes fractal-spin {
+    100% {
+        transform: rotate(1turn);
+    }
 }
 
 .scrollingBG {
     width: 1600px;
     object-fit: none;
-    opacity:0.7;
-    display:none;
+    opacity: 0.7;
+    display: none;
     height: 960px;
-    position:absolute;
+    position: absolute;
     border: none;
-    background: linear-gradient(from -90deg at calc(100% - 4.2px) calc(100% - 4.2px),#0000 0 90deg, #daefda 0),
-           linear-gradient(from -90deg at calc(100% - 4.2px) calc(100% - 4.2px),#0000 0 90deg, #daefda 0);
+    background: linear-gradient(from -90deg at calc(100% - 4.2px) calc(100% - 4.2px), #0000 0 90deg, #daefda 0),
+               linear-gradient(from -90deg at calc(100% - 4.2px) calc(100% - 4.2px), #0000 0 90deg, #daefda 0);
     background-size: 250px 250px;
     animation: smooth-scroll 40.4s infinite;
     filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
     z-index: 8;
- }
- 
- @keyframes smooth-scroll {
+}
+
+@keyframes smooth-scroll {
     100% {
-       background-position: -250px -250px,250px 250px;
+        background-position: -250px -250px, 250px 250px;
     }
- }
- .scrollingBG4 {
+}
+
+.scrollingBG4 {
     width: 1000px;
     filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
     height: 1000px;
-    left:1600px;
-    top:200px;
+    left: 1600px;
+    top: 200px;
     display: grid;
-    position:absolute;
+    position: absolute;
     z-index: 6;
-    opacity:0.5;
-    border:none;
+    opacity: 0.5;
+    border: none;
     border: 150.5px solid #0000;
     border-radius: 50%;
     border-right-color: #cbdbc8;
     animation: circle-spin 20s infinite linear;
- }
- 
- .scrollingBG4::before,
- .scrollingBG4::after {
+}
+
+.scrollingBG4::before,
+.scrollingBG4::after {
     content: "";
     grid-area: 1/1;
     margin: 200.2px;
     border: inherit;
     border-radius: 50%;
     animation: circle-spin 40s infinite;
- }
- 
- .scrollingBG4::after {
+}
+
+.scrollingBG4::after {
     margin: 20.9px;
     animation-duration: 60s;
- }
- 
- @keyframes circle-spin {
+}
+
+@keyframes circle-spin {
     100% {
-       transform: rotate(1turn);
+        transform: rotate(1turn);
     }
- }
- .scrollingBG3 {
+}
+
+.scrollingBG3 {
     width: 1600px;
     height: 960px;
-    opacity:0.6;
-    display:none;
-    position:absolute;
+    opacity: 0.6;
+    display: none;
+    position: absolute;
     border: none;
     border: 3px solid #e5fae3;
-    background: radial-gradient(farthest-side,#0000 calc(100% - 5.3px),#e5fae3 calc(100% - 3.5px) 98%,#0000),
-           radial-gradient(farthest-side,#0000 calc(100% - 5.3px),#e5fae3 calc(100% - 3.5px) 98%,#0000);
+    background: radial-gradient(farthest-side, #0000 calc(100% - 5.3px), #e5fae3 calc(100% - 3.5px) 98%, #0000),
+               radial-gradient(farthest-side, #0000 calc(100% - 5.3px), #e5fae3 calc(100% - 3.5px) 98%, #0000);
     background-size: 300px 300px;
-    background-position: 0 0,156.2px 156.2px;
+    background-position: 0 0, 156.2px 156.2px;
     animation: hypnotic-218taehg 40.4s infinite;
-    z-index:7;
+    z-index: 7;
     filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
+}
 
- }
- 
- @keyframes hypnotic-218taehg {
+@keyframes hypnotic-218taehg {
     100% {
-       background-position: -300px 0px,156.2px 456.3px;
+        background-position: -300px 0px, 156.2px 456.3px;
     }
- }
- .scrollingBG2 {
+}
+
+.scrollingBG2 {
     width: 2600px;
     height: 2600px;
     display: grid;
-    position:absolute;
+    position: absolute;
     z-index: 6;
-    opacity:0.25;
-    border:none;
-    z-index:6;
-    left:-3000px;
+    opacity: 0.25;
+    border: none;
+    z-index: 6;
+    left: -3000px;
     filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
-    top:-1500px;
- }
- 
- .scrollingBG2::before,
- .scrollingBG2::after {
+    top: -1500px;
+}
+
+.scrollingBG2::before,
+.scrollingBG2::after {
     content: "";
     grid-area: 1/1;
     border-radius: 50%;
     background: conic-gradient(from 0deg at center, #9ac4a6, #0000 30deg, #9ac4a6 60deg, #0000 90deg, #9ac4a6 120deg, #0000 150deg, #9ac4a6 180deg, #0000 210deg, #9ac4a6 240deg, #0000 270deg, #9ac4a6 300deg, #0000 330deg, #9ac4a6 360deg);
-    -webkit-mask: repeating-radial-gradient(farthest-side,#000 0 10%,#0000 0 20%);
+    -webkit-mask: repeating-radial-gradient(farthest-side, #000 0 10%, #0000 0 20%);
     animation: scrollingBG2-5m0nuf 80s infinite linear;
- }
- 
- .scrollingBG2::after {
-    -webkit-mask: repeating-radial-gradient(farthest-side,#0000 0 10%,#000 0 20%);
+}
+
+.scrollingBG2::after {
+    -webkit-mask: repeating-radial-gradient(farthest-side, #0000 0 10%, #000 0 20%);
     animation-direction: reverse;
- }
- 
- @keyframes scrollingBG2-5m0nuf {
+}
+
+@keyframes scrollingBG2-5m0nuf {
     100% {
-       transform: rotate(.5turn);
+        transform: rotate(.5turn);
     }
- }
+}
 
 .bg1 {
     object-fit: none;
@@ -158,29 +170,29 @@ body {
     height: 960px;
     margin-left: auto;
     margin-right: auto;
-    content:url("images/bg1.png");
-    position:absolute;
+    content: url("images/bg1.png");
+    position: absolute;
     z-index: 5;
-    animation:hue 3s linear 0s infinite normal forwards;
-
+    animation: hue 3s linear 0s infinite normal forwards;
 }
-    @keyframes hue{
-     0%{
-         filter: hue-rotate(0deg);
-     }
-     25%{
-         filter: hue-rotate(180deg);
-     }
-     50%{
-         filter: hue-rotate(360deg);
-     }
-     75%{
-         filter: hue-rotate(180deg);
-     }
-     100%{
-         filter: hue-rotate(0deg);
-     }
- }
+
+@keyframes hue {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    25% {
+        filter: hue-rotate(180deg);
+    }
+    50% {
+        filter: hue-rotate(360deg);
+    }
+    75% {
+        filter: hue-rotate(180deg);
+    }
+    100% {
+        filter: hue-rotate(0deg);
+    }
+}
 
 /* Existing CSS... */
 
