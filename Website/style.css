@@ -167,8 +167,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("images/T5k3(1).gif") no-repeat center center fixed;
-    background-size: cover;
+    background: url("images/T5k3(1).gif") repeat;
     z-index: 5;
 }
 
