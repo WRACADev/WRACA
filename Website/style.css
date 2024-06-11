@@ -1,247 +1,303 @@
 @font-face {
-  font-family: "Rodin NTLG";
-  src: url("path/to/rodin_ntlg_font.otf"); /* Update the path accordingly */
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-y: auto;
-}
-
-.content-section {
-    margin: 20px auto;
-    padding: 20px;
-    width: 80%;
-    max-width: 1200px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background: #fff;
-}
-
-.event-post img {
-    width: 100%;
-    height: auto;
+    font-family: 'Rodin NTLG';
+    src: url('path/to/rodin_ntlg_font.otf'); /* Update the path accordingly */
 }
 
 body {
-  font-family: "Rodin NTLG", sans-serif;
-  color: black;
+    font-family: 'Rodin NTLG', sans-serif;
+    color: black;
 }
-.content-section h1,
-.content-section h2,
-.content-section p {
-  color: black;
-  font-family: "Rodin NTLG", sans-serif;
-  animation: none;
+.content-section h1, .content-section h2, .content-section p {
+    color: black ;
+    font-family: 'Rodin NTLG', sans-serif;
+    animation: none;
 }
-
-.X-icon {
-  background-image: url("images/X.png");
-  background-size: contain;
-  width: 35px;
-  height: 35px;
-  margin: 3px;
-  display: inline-block;
+.social-media img {
+    height: 32px; /* Adjust size as needed */
+    width: 32px;
+    margin: 5px; /* Optional: To add some spacing between icons */
 }
 
-.instagram-icon {
-  background-image: url("images/instagram.png");
-  background-size: contain;
-  width: 35px;
-  height: 35px;
-  margin: 3px;
-  display: inline-block;
+.main{
+    position: relative;
+    display: none;
+    margin-right: auto;
+    margin-left: auto;
+    border-style:solid;
+    border-color: #000000;
+    border-width: 10px;
+    width: 1600px;
+    height: 960px;
+    overflow: hidden;
+    z-index: 50;
+
+    user-select: none;
+    background-color: rgb(255, 255, 255)
 }
 
-.spotify-icon {
-  background-image: url("images/spotify.png");
-  background-size: contain;
-  width: 35px;
-  height: 35px;
-  margin: 3px;
-  display: inline-block;
-}
+    .scrollingBG {
+        width: 1600px;
+        object-fit: none;
+        opacity:0.7;
+        display:none;
+        height: 960px;
+        position:absolute;
+        border: none;
+        background: linear-gradient(from -90deg at calc(100% - 4.2px) calc(100% - 4.2px),#0000 0 90deg, #daefda 0),
+               linear-gradient(from -90deg at calc(100% - 4.2px) calc(100% - 4.2px),#0000 0 90deg, #daefda 0);
+        background-size: 250px 250px;
+        animation: hypnotic-p6wowimd 40.4s infinite;
+        filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
+        z-index: 8;
+     }
+     
+     @keyframes hypnotic-p6wowimd {
+        100% {
+           background-position: -250px -250px,250px 250px;
+        }
+     }
+     .scrollingBG4 {
+        width: 1000px;
+        filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
+        height: 1000px;
+        left:1600px;
+        top:200px;
+        display: grid;
+        position:absolute;
+        z-index: 6;
+        opacity:0.5;
+        border:none;
+        border: 150.5px solid #0000;
+        border-radius: 50%;
+        border-right-color: #cbdbc8;
+        animation: spinner-a4dj62 20s infinite linear;
+     }
+     
+     .scrollingBG4::before,
+     .scrollingBG4::after {
+        content: "";
+        grid-area: 1/1;
+        margin: 200.2px;
+        border: inherit;
+        border-radius: 50%;
+        animation: spinner-a4dj62 40s infinite;
+     }
+     
+     .scrollingBG4::after {
+        margin: 20.9px;
+        animation-duration: 60s;
+     }
+     
+     @keyframes spinner-a4dj62 {
+        100% {
+           transform: rotate(1turn);
+        }
+     }
+     .scrollingBG3 {
+        width: 1600px;
+        height: 960px;
+        opacity:0.6;
+        display:none;
+        position:absolute;
+        border: none;
+        border: 3px solid #e5fae3;
+        background: radial-gradient(farthest-side,#0000 calc(100% - 5.3px),#e5fae3 calc(100% - 3.5px) 98%,#0000),
+               radial-gradient(farthest-side,#0000 calc(100% - 5.3px),#e5fae3 calc(100% - 3.5px) 98%,#0000);
+        background-size: 300px 300px;
+        background-position: 0 0,156.2px 156.2px;
+        animation: hypnotic-218taehg 40.4s infinite;
+        z-index:7;
+        filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
 
-.bandcamp-icon {
-  background-image: url("images/bandcamp.png");
-  background-size: contain;
-  width: 35px;
-  height: 35px;
-  margin: 3px;
-  display: inline-block;
-}
+     }
+     
+     @keyframes hypnotic-218taehg {
+        100% {
+           background-position: -300px 0px,156.2px 456.3px;
+        }
+     }
+     .scrollingBG2 {
+        width: 2600px;
+        height: 2600px;
+        display: grid;
+        position:absolute;
+        z-index: 6;
+        opacity:0.25;
+        border:none;
+        z-index:6;
+        left:-3000px;
+        filter: drop-shadow(2px 2px 1px rgb(0 0 0 / 0.4));
+        top:-1500px;
+     }
+     
+     .scrollingBG2::before,
+     .scrollingBG2::after {
+        content: "";
+        grid-area: 1/1;
+        border-radius: 50%;
+        background: repeating-linear-gradient(#0000,#9ac4a6 1deg 18deg,#0000 20deg 36deg);
+        -webkit-mask: repeating-radial-gradient(farthest-side,#000 0 10%,#0000 0 20%);
+        animation: scrollingBG2-5m0nuf 80s infinite linear;
+     }
+     
+     .scrollingBG2::after {
+        -webkit-mask: repeating-radial-gradient(farthest-side,#0000 0 10%,#000 0 20%);
+        animation-direction: reverse;
+     }
+     
+     @keyframes scrollingBG2-5m0nuf {
+        100% {
+           transform: rotate(.5turn);
+        }
+     }
 
-.apple-icon {
-  background-image: url("images/appleMusic.png");
-  background-size: contain;
-  width: 35px;
-  height: 35px;
-  margin: 3px;
-  display: inline-block;
-}
+    .bg1 {
+        object-fit: none;
+        display: none;
+        width: 1600px;
+        height: 960px;
+        margin-left: auto;
+        margin-right: auto;
+        content:url("images/bg1.png");
+        position:absolute;
+        z-index: 5;
+        animation:hue 3s linear 0s infinite normal forwards;
 
-.youtube-icon {
-  background-image: url("images/youtube.png");
-  background-size: contain;
-  width: 35px;
-  height: 35px;
-  margin: 3px;
-  display: inline-block;
-}
-
-.main {
-  position: relative;
-  display: none;
-  margin-right: auto;
-  margin-left: auto;
-  border-style: solid;
-  border-color: #000000;
-  border-width: 10px;
-  width: 1600px;
-  height: 960px;
-  overflow: hidden;
-  z-index: 50;
-
-  -webkit-user-select: none;
-  user-select: none;
-  background-color: rgb(255, 255, 255);
-}
-
-.newScrollingBG {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-  background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
-  animation: newBackgroundAnimation 20s linear infinite;
-}
-
-@keyframes newBackgroundAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+    }
+        @keyframes hue{
+         0%{
+             filter: hue-rotate(0deg);
+         }
+         25%{
+             filter: hue-rotate(180deg);
+         }
+         50%{
+             filter: hue-rotate(360deg);
+         }
+         75%{
+             filter: hue-rotate(180deg);
+         }
+         100%{
+             filter: hue-rotate(0deg);
+         }
+     }
 
 /* Existing CSS... */
 
 /* Popup Form CSS */
 .popup-form {
-  display: none;
-  position: fixed;
-  z-index: 200;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
 }
 
 .form-content {
-  background-color: white;
-  margin: 5% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
+    background-color: white;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
 }
 
 .close-btn {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .close-btn:hover,
 .close-btn:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 #openFormBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 200;
-  background-color: #4caf50;
-  color: white;
-  padding: 15px 20px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 200;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 #openFormBtn:hover {
-  background-color: #45a049;
+    background-color: #45a049;
 }
 
 /* Chat Box CSS */
 .chat-box {
-  border: 1px solid #ddd;
-  padding: 10px;
-  height: 300px;
-  overflow-y: auto;
-  margin-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
 }
 
 #chatForm {
-  display: flex;
+    display: flex;
 }
 
 #chatInput {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-right: none;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 #chatForm button {
-  padding: 10px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  cursor: pointer;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
 }
 
 #chatForm button:hover {
-  background-color: #45a049;
+    background-color: #45a049;
 }
 
 .forum-list button {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
-  background-color: #f1f1f1;
-  border: 1px solid #ddd;
-  cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    cursor: pointer;
 }
 
 .forum-list button:hover {
-  background-color: #ddd;
+    background-color: #ddd;
 }
 
 .chat-container {
-  display: none;
+    display: none;
 }
 
 .wraca-logo {
-  position: absolute;
-  top: 20px; /* Adjust as needed */
-  right: 20px; /* Adjust as needed */
-  height: 50px; /* Adjust as needed */
-  width: auto; /* Maintain aspect ratio */
-  z-index: 100; /* Ensure it's on top of other elements */
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    width: auto; /* Maintain aspect ratio */
+    z-index: 100; /* Ensure it's on top of other elements */
 }
+
+
+    
