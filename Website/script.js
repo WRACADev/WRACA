@@ -1,3 +1,16 @@
+$(document).ready(function() {
+    function showSection(sectionId) {
+        $(".content-section").hide();
+        $("#" + sectionId).show();
+    }
+    
+    $(".dropdown-content a").on("click", function() {
+        var target = $(this).attr("href").substring(1);
+        showSection(target);
+    });
+});
+
+
 $(document).ready(function () {
   $("#entryLogo, #entryBG, #entryText, #main").show();
   $("#scrollingBG").fadeIn(1500);
