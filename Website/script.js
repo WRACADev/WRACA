@@ -151,17 +151,5 @@ $(document).ready(function () {
     // For now, we'll just log the message
     console.log("Saving message:", { forumId, message });
   }
-  $(document).ready(function() {
-  const socket = io();
-    $('#chatForm').submit(function(e) {
-      e.preventDefault();
-      const message = $('#chatInput').val();
-      socket.emit('message', message);
-      $('#chatInput').val('');
-    });
   
-    socket.on('message', function(message) {
-      $('#chatBox').append($('<p>').text(message));
-    });
-  }); 
 });
