@@ -10,6 +10,57 @@ $(document).ready(function() {
     });
 });
 
+document.getElementById('analyzeButton').addEventListener('click', function() {
+  const fileInput = document.getElementById('audioInput');
+  if (fileInput.files.length === 0) {
+    alert('Please upload an audio file.');
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append('file', fileInput.files[0]);
+
+  fetch('http://localhost:8000/predict', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    const resultDiv = document.getElementById('analysisResult');
+    resultDiv.innerHTML = `
+      <p>Genre: ${data.genre}</p>
+      <p>BPM: ${data.metrics.BPM}</p>
+      <p>Spectral Centroid: ${data.metrics["Spectral Centroid"]}</p>
+      <p>Spectral Bandwidth: ${data.metrics["Spectral Bandwidth"]}</p>
+      <p>RMS: ${data.metrics.RMS}</p>
+      <p>Bass: ${data.metrics.Bass}</p>
+      <p>Mids: ${data.metrics.Mids}</p>
+      <p>Treble: ${data.metrics.Treble}</p>
+    `;
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+});
+
+// Radio
+fetch('http://localhost:8000/library')
+  .then(response => response.json())
+  .then(data => {
+    const libraryDiv = document.getElementById('library');
+    data.forEach(item => {
+      const itemDiv = document.createElement('div');
+      itemDiv.innerHTML = `
+        <p>Features: ${item.features}</p>
+        <p>Label: ${item.label}</p>
+        <p>Metrics: ${JSON.stringify(item.metrics)}</p>
+      `;
+      libraryDiv.appendChild(itemDiv);
+    });
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
 
 $(document).ready(function () {
   $("#entryLogo, #entryBG, #entryText, #main").show();
