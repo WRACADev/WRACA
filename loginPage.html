@@ -71,14 +71,14 @@
       <h2>Welcome to the site!</h2>
     </div>
     <script>
-      $('#login').click(function() {
-        const username = $('#uname').val();
-        const password = $('#psw').val();
-        $.post('/login', { username, password }, function(data) {
-          if (data === 'Login successful') {
-            window.location.href = 'index.html';
+      $("#login").click(function () {
+        const username = $("#uname").val();
+        const password = $("#psw").val();
+        $.post("/login", { username, password }, function (data) {
+          if (data === "Login successful") {
+            window.location.href = "index.html";
           } else {
-            alert('Invalid username or password');
+            alert("Invalid username or password");
           }
         });
       });
