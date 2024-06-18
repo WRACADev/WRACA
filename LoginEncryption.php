@@ -1,144 +1,73 @@
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "password";
+$dbname = "website_accounts";
 
-/**
- * Class LoginEncryption
- *
- * This class provides methods for encrypting and decrypting data using AES in ECB mode and RSA algorithms.
- */
-class LoginEncryption {
+// AES key (store this securely and do not hardcode in production)
+define('AES_KEY', 'your_aes_key_here');
+define('AES_METHOD', 'aes-256-cbc');
 
-    // Private properties to store keys
-    private $secretKey;
-    private $privateKey;
-    private $publicKey;
+// Generate RSA keys (store these securely)
+$private_key = openssl_pkey_new(array(
+    "private_key_bits" => 2048,
+    "private_key_type" => OPENSSL_KEYTYPE_RSA,
+));
+openssl_pkey_export($private_key, $private_key_pem);
+$public_key = openssl_pkey_get_details($private_key)['key'];
 
-    /**
-     * Constructor for the LoginEncryption class.
-     *
-     * @param string|null $secretKey   The secret key for AES encryption. If not provided, a random key will be generated.
-     * @param string|null $privateKey  The private key for RSA encryption. If not provided, a key pair will be generated.
-     * @param string|null $publicKey   The public key for RSA encryption. If not provided, a key pair will be generated.
-     */
-    public function __construct($secretKey = null, $privateKey = null, $publicKey = null) {
-        $this->secretKey = $secretKey ?: self::generateAESKey();
-        $keyPair = $privateKey && $publicKey ? ['privateKey' => $privateKey, 'publicKey' => $publicKey] : self::generateRSAKeyPair();
-        $this->privateKey = $keyPair['privateKey'];
-        $this->publicKey = $keyPair['publicKey'];
+file_put_contents('private_key.pem', $private_key_pem);
+file_put_contents('public_key.pem', $public_key);
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+function encryptPassword($password) {
+    return openssl_encrypt($password, AES_METHOD, AES_KEY, 0, substr(AES_KEY, 0, 16));
+}
+
+function decryptPassword($encrypted_password) {
+    return openssl_decrypt($encrypted_password, AES_METHOD, AES_KEY, 0, substr(AES_KEY, 0, 16));
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
+    $encrypted_password = $_POST['password'];
+
+    openssl_private_decrypt(base64_decode($encrypted_password), $password, file_get_contents('private_key.pem'));
+
+    if (isset($_POST['register'])) {
+        $password_hash = encryptPassword($password);
+        $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password_hash')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "User registered successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
     }
 
-    /**
-     * Get the secret key used for AES encryption.
-     *
-     * @return string The secret key.
-     */
-    public function getSecretKey() {
-        return $this->secretKey;
-    }
+    if (isset($_POST['login'])) {
+        $sql = "SELECT * FROM users WHERE username='$username'";
+        $result = $conn->query($sql);
 
-    /**
-     * Get the private key used for RSA encryption.
-     *
-     * @return string The private key.
-     */
-    public function getPrivateKey() {
-        return $this->privateKey;
-    }
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $stored_password = decryptPassword($row['password']);
 
-    /**
-     * Get the public key used for RSA encryption.
-     *
-     * @return string The public key.
-     */
-    public function getPublicKey() {
-        return $this->publicKey;
-    }
-
-    /**
-     * Encrypt the given plain text using AES in ECB mode and RSA.
-     *
-     * @param string $plainText The plain text to encrypt.
-     * @return string The encrypted data.
-     */
-    public function encrypt($plainText) {
-        $encryptedAES = self::encryptAES($plainText, $this->secretKey);
-        openssl_public_encrypt($encryptedAES, $encryptedData, $this->publicKey);
-        return $encryptedData;
-    }
-
-    /**
-     * Decrypt the given encrypted data using RSA and AES in ECB mode.
-     *
-     * @param string $encryptedData The encrypted data to decrypt.
-     * @return string The decrypted plain text.
-     */
-    public function decrypt($encryptedData) {
-        openssl_private_decrypt($encryptedData, $decryptedAES, $this->privateKey);
-        return self::decryptAES($decryptedAES, $this->secretKey);
-    }
-
-    /**
-     * Generate a random AES key.
-     *
-     * @return string The generated AES key.
-     */
-    private static function generateAESKey() {
-        $keyGen = openssl_cipher_iv_length("AES-256-ECB");
-        return bin2hex(random_bytes($keyGen));
-    }
-
-    /**
-     * Generate a key pair for RSA encryption.
-     *
-     * @return array An array containing the private and public keys.
-     */
-    private static function generateRSAKeyPair() {
-        $config = [
-            "digest_alg" => "sha512",
-            "private_key_bits" => 2048,
-            "private_key_type" => OPENSSL_KEYTYPE_RSA,
-        ];
-        $res = openssl_pkey_new($config);
-        openssl_pkey_export($res, $privateKey);
-        $publicKey = openssl_pkey_get_details($res)["key"];
-        return ["privateKey" => $privateKey, "publicKey" => $publicKey];
-    }
-
-    /**
-     * Encrypt the given plain text using AES in ECB mode.
-     *
-     * @param string $plainText The plain text to encrypt.
-     * @param string $secretKey The secret key for encryption.
-     * @return string The encrypted data.
-     */
-    private static function encryptAES($plainText, $secretKey) {
-        $encryptedBytes = openssl_encrypt($plainText, "AES-256-ECB", $secretKey, 0);
-        return base64_encode($encryptedBytes);
-    }
-
-    /**
-     * Decrypt the given encrypted text using AES in ECB mode.
-     *
-     * @param string $encryptedText The encrypted text to decrypt.
-     * @param string $secretKey The secret key for decryption.
-     * @return string The decrypted plain text.
-     */
-    private static function decryptAES($encryptedText, $secretKey) {
-        $encryptedBytes = base64_decode($encryptedText);
-        $decryptedText = openssl_decrypt($encryptedBytes, "AES-256-ECB", $secretKey, 0);
-        return $decryptedText;
+            if ($stored_password === $password) {
+                echo "Login successful";
+            } else {
+                echo "Invalid username or password";
+            }
+        } else {
+            echo "Invalid username or password";
+        }
     }
 }
 
-// DRIVER SCRIPT
-$dudeEncryptor = new LoginEncryption();
-
-// Sample data
-$originalText = "Wow, this is some top-secret message, dude! 🤐";
-
-// Encrypt the data
-$encryptedData = $dudeEncryptor->encrypt($originalText);
-echo "Encrypted message: $encryptedData\n";
-
-// Decrypt the data
-$decryptedText = $dudeEncryptor->decrypt($encryptedData);
-echo "Decrypted message: $decryptedText\n";
+$conn->close();
+?>
