@@ -36,12 +36,18 @@ function decryptPassword($encrypted_password) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $encrypted_password = $_POST['password'];
+    $personal_info = $_POST['personal_info'] ?? '';
+    $favorite_genres = $_POST['favorite_genres'] ?? '';
+    $recent_listening_history = $_POST['recent_listening_history'] ?? '';
+    $user_type = $_POST['user_type'] ?? 'standard';
+    $chat_names = $_POST['chat_names'] ?? '';
 
     openssl_private_decrypt(base64_decode($encrypted_password), $password, file_get_contents('private_key.pem'));
 
     if (isset($_POST['register'])) {
         $password_hash = encryptPassword($password);
-        $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password_hash')";
+        $sql = "INSERT INTO users (username, password, personal_info, favorite_genres, recent_listening_history, user_type, chat_names) 
+                VALUES ('$username', '$password_hash', '$personal_info', '$favorite_genres', '$recent_listening_history', '$user_type', '$chat_names')";
 
         if ($conn->query($sql) === TRUE) {
             echo "User registered successfully";
