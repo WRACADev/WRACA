@@ -422,6 +422,96 @@ h2 {
   display: block;
   margin: 0 auto;
 }
+/* Style for the dropdown menu button */
+.dropbtn {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 16px; /* Some padding */
+  font-size: 16px; /* Increase font size */
+  border: none; /* Remove borders */
+  cursor: pointer; /* Pointer/hand icon */
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.dropbtn:hover {
+  background-color: #3e8e41; /* Darker green on hover */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Hide overflow for smooth corners */
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd; /* Grey background on hover */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* Show dropdown menu on hover */
+}
+
+/* Animation for dropdown */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-content {
+  animation: slideDown 0.3s ease forwards;
+}
+
+/* Additional styling for buttons */
+.button {
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  padding: 16px; /* Some padding */
+  font-size: 16px; /* Increase font size */
+  border: none; /* Remove borders */
+  cursor: pointer; /* Pointer/hand icon */
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.button:hover {
+  background-color: #3e8e41; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Styling for animated sections */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.content-section {
+  animation: fadeIn 1s ease forwards;
+}
+
 /* Ensure main content container is correctly sized */
 .main {
   position: relative;
