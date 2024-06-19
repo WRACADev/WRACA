@@ -365,6 +365,7 @@ body {
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .event-post img {
@@ -377,3 +378,31 @@ body {
   margin-top: 10px;
 }
 
+/* Ensure the events section can scroll if needed */
+#events {
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Ensure main content container is correctly sized */
+.main {
+  position: relative;
+  margin: auto;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 10px;
+  width: 80%;
+  max-width: 1200px;
+  height: auto;
+  overflow: hidden;
+  z-index: 50;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Adjust the content section */
+.content-section {
+  padding: 20px;
+  box-sizing: border-box;
+}
