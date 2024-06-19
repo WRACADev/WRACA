@@ -357,3 +357,23 @@ body {
   display: block;
   margin: 0 auto;
 }
+/* Updated Event Post CSS */
+.event-post {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.event-post img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.event-post p {
+  margin-top: 10px;
+}
+
