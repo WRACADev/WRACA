@@ -258,28 +258,6 @@ h2 {
   font-size: 24px;
   margin-bottom: 20px;
 }
-
-/* Ensure main content container is correctly sized */
-.main {
-  position: relative;
-  margin: auto;
-  border-style: solid;
-  border-color: #000000;
-  border-width: 10px;
-  width: 80%;
-  max-width: 1200px;
-  height: auto;
-  overflow: hidden;
-  z-index: 50;
-  background-color: rgb(255, 255, 255);
-}
-
-/* Adjust the content section */
-.content-section {
-  padding: 20px;
-  box-sizing: border-box;
-}
-
 .artist-showcase-container {
   display: flex;
   overflow-x: auto;
@@ -443,4 +421,24 @@ h2 {
 .home-content img {
   display: block;
   margin: 0 auto;
+}
+/* Ensure main content container is correctly sized */
+.main {
+  position: relative;
+  margin: auto;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 10px;
+  width: 80%;
+  max-width: 1200px;
+  height: auto;
+  overflow: hidden;
+  z-index: 50;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Adjust the content section */
+.content-section {
+  padding: 20px;
+  box-sizing: border-box;
 }
