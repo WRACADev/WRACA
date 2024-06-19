@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/windowBackground"
+    tools:context=".SettingsActivity">
+
+    <SeekBar
+        android:id="@+id/volumeSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"/>
+
+    <Switch
+        android:id="@+id/bigModeSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/volumeSeekBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Big Mode"/>
+
+    <!-- Start for color switch -->
+    <TextView
+        android:id="@+id/taskBarSwitch"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"
+        android:text="Pick Taskbar Color"
+        android:layout_below="@id/bigModeSwitch"/>
+
+    <RelativeLayout
+        android:id="@+id/taskBarColors1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/taskBarSwitch"
+        android:gravity="center">
+
+
+        <Button
+            android:id="@+id/yellowButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="30dp"
+            android:onClick="switchYellow"
+            android:background="@color/yellow"
+            android:text="" />
+
+        <Button
+            android:id="@+id/greenButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@color/green"
+            android:onClick="switchGreen"
+            android:layout_toEndOf="@+id/redButton"
+            android:text="" />
+
+        <Button
+            android:id="@+id/redButton"
+            android:layout_width="56dp"
+            android:background="@color/red"
+            android:layout_height="56dp"
+            android:onClick="switchRed"
+            android:layout_marginRight="30dp"
+            android:layout_toEndOf="@+id/yellowButton"/>
+
+        <Button
+            android:id="@+id/companyColorButton"
+            android:layout_width="56dp"
+            android:background="@color/company_colour"
+            android:layout_height="56dp"
+            android:onClick="switchCompanyColor"
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@+id/greenButton"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/taskBarColors2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/taskBarColors1"
+        android:layout_marginTop="30dp"
+        android:gravity="center">
+
+
+        <Button
+            android:id="@+id/purpleButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:onClick="switchPurple"
+            android:background="@color/purple"
+            android:text="" />
+
+        <Button
+            android:id="@+id/greyButton"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@color/lightGrey"
+            android:onClick="switchGrey"
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@+id/purpleButton"
+            android:text="" />
+
+        <Button
+            android:id="@+id/lightBlueButton"
+            android:layout_width="56dp"
+            android:background="@color/blue"
+            android:layout_height="56dp"
+            android:onClick="switchLightBlue"
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@+id/greyButton"/>
+
+        <Button
+            android:id="@+id/blackWhite"
+            android:layout_width="56dp"
+            android:background="@color/white"
+            android:layout_height="56dp"
+            android:onClick="switchWhite"
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@+id/lightBlueButton"/>
+
+
+    </RelativeLayout>
+
+    <!-- Start for color switch -->
+    <TextView
+        android:id="@+id/backgroundSwitch"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"
+        android:text="Pick Background Color"
+        android:layout_below="@id/taskBarColors2"/>
+
+    <RelativeLayout
+        android:id="@+id/backgroundColors1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/backgroundSwitch"
+        android:gravity="center">
+
+
+        <Button
+            android:id="@+id/blueButtonB"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginRight="30dp"
+            android:onClick="switchBlueBackground"
+            android:background="@color/dark_blue"
+            android:text="" />
+
+        <Button
+            android:id="@+id/greenButtonB"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@color/green"
+            android:onClick="switchGreenBackground"
+            android:layout_toEndOf="@+id/redButtonB"
+            android:text="" />
+
+        <Button
+            android:id="@+id/redButtonB"
+            android:layout_width="56dp"
+            android:background="@color/red"
+            android:layout_height="56dp"
+            android:onClick="switchRedBackground"
+            android:layout_marginRight="30dp"
+            android:layout_toEndOf="@+id/blueButtonB"/>
+
+        <Button
+            android:id="@+id/companyColorButtonB"
+            android:layout_width="56dp"
+            android:background="@color/company_colour"
+            android:layout_height="56dp"
+            android:onClick="switchCompanyColorBackground"
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@+id/greenButtonB"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/backgroundColors2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/backgroundColors1"
+        android:layout_marginTop="30dp"
+        android:gravity="center">
+
+
+        <Button
+            android:id="@+id/purpleButtonB"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:onClick="switchPurpleBackground"
+            android:background="@color/purple"
+            android:text="" />
+
+        <Button
+            android:id="@+id/greyButtonB"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@color/lightGrey"
+            android:onClick="switchGreyBackground"
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@+id/purpleButtonB"
+            android:text="" />
+
+        <Button
+            android:id="@+id/whiteButtonB"
+            android:layout_width="56dp"
+            android:background="@color/white"
+            android:layout_height="56dp"
+            android:onClick="switchWhiteBackground"
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@+id/greyButtonB"/>
+
+        <Button
+            android:id="@+id/blackButtonB"
+            android:layout_width="56dp"
+            android:background="@color/black"
+            android:layout_height="56dp"
+            android:onClick="switchBlackBackground"
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@+id/whiteButtonB"/>
+
+
+    </RelativeLayout>
+
+
+
+    <TextView
+        android:id="@+id/currentColorTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Current Colors"
+        android:layout_below="@id/backgroundColors2"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"/>
+    <RelativeLayout
+        android:id="@+id/colorDisplay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/currentColorTitle"
+
+        android:gravity="center"
+        >
+
+        <Button
+            android:id="@+id/currentTaskDisplay"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_centerHorizontal="true"
+            android:text="TB"
+            android:background="@color/company_colour"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/currentBackgroundDisplay"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:text="BG"
+            android:background="@color/white"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:onClick="switchRed"
+            android:layout_marginLeft="30dp"
+            android:layout_toEndOf="@+id/currentTaskDisplay"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/returnToMenuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/colorDisplay"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-389dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/company_colour"
+        android:onClick="returnProfile"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
+        android:text="Open Profile" />
+    <TextView
+        android:id="@+id/loadingDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/returnToMenuButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-389dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:onClick="returnProfile"
+        android:paddingStart="6dp"
+        android:visibility="invisible"
+        android:paddingEnd="6dp"
+        android:text="Loading" />
+
+</RelativeLayout>

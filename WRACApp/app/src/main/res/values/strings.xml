@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">HR Tracker</string>
+
+    <string-array name="navigation_menu">
+        <item>Menu</item>
+        <item>Profile</item>
+        <item>Timesheet</item>
+        <item>File Center</item>
+        <item>Settings</item>
+    </string-array>
+
+</resources>

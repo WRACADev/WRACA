@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#CCCCCC</color>
+    <color name="lightGrey">#DADADA</color>
+    <color name="even_row_color">#FFFFFFFF</color>
+    <color name="odd_row_color">#f2f2f2</color>
+    <color name="dark_grey">#363737</color>
+    <color name="dark_blue">#00072d</color>
+    <color name="green">#36C60E</color>
+    <color name="red">#982D36</color>
+    <color name="company_colour">#FB9603</color>
+    <color name="purple">#9D6CCF</color>
+    <color name="blue">#2196F3</color>
+    <color name="yellow">#F8F054</color>
+
+
+</resources>
+
