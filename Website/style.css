@@ -362,6 +362,11 @@ body {
 .content-section {
   padding: 20px;
 }
+/* Other CSS remains unchanged */
+
+.content-section {
+  padding: 20px;
+}
 
 #events {
   display: none;
@@ -376,8 +381,8 @@ body {
 .event-post {
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 10px; /* Reduced padding */
+  margin-bottom: 10px; /* Reduced margin */
   background-color: #f9f9f9;
 }
 
@@ -388,9 +393,9 @@ body {
 }
 
 .event-post p {
-  margin-top: 10px;
-  font-size: 16px;
-  line-height: 1.5;
+  margin-top: 5px; /* Reduced margin */
+  font-size: 14px; /* Reduced font size */
+  line-height: 1.4; /* Adjusted line height */
 }
 
 h2 {
