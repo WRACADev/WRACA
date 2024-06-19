@@ -1,5 +1,5 @@
 body {
-  font-family: "Rodin NTLG", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: black;
   background: linear-gradient(135deg, #000, #000 10px, #fff 10px, #fff 20px);
 }
@@ -8,7 +8,7 @@ body {
 .content-section h2,
 .content-section p {
   color: black;
-  font-family: "Rodin NTLG", sans-serif;
+  font-family: 'Roboto', sans-serif;
   animation: none;
 }
 
@@ -221,7 +221,70 @@ body {
   }
 }
 
-/* Existing CSS... */
+#events {
+  display: none;
+  z-index: 1000;
+  position: relative;
+  overflow-y: auto;
+  max-height: 80vh; /* Adjust as needed */
+  padding: 20px;
+  background-color: #fff; /* Background color for better readability */
+}
+
+.event-post {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px; /* Reduced padding */
+  margin-bottom: 10px; /* Reduced margin */
+  background-color: #f9f9f9;
+}
+
+.event-post img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.event-post p {
+  margin-top: 5px; /* Reduced margin */
+  font-size: 14px; /* Reduced font size */
+  line-height: 1.4; /* Adjusted line height */
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.artist-showcase-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  gap: 20px;
+}
+
+.artist-entry {
+  min-width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.artist-entry img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.artist-entry p {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
 
 /* Popup Form CSS */
 .popup-form {
@@ -356,70 +419,4 @@ body {
 .home-content img {
   display: block;
   margin: 0 auto;
-}
-/* Other CSS remains unchanged */
-
-.content-section {
-  padding: 20px;
-}
-/* Other CSS remains unchanged */
-
-.content-section {
-  padding: 20px;
-}
-
-#events {
-  display: none;
-  z-index: 1000;
-  position: relative;
-  overflow-y: auto;
-  max-height: 80vh; /* Adjust as needed */
-  padding: 20px;
-  background-color: #fff; /* Background color for better readability */
-}
-
-.event-post {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px; /* Reduced padding */
-  margin-bottom: 10px; /* Reduced margin */
-  background-color: #f9f9f9;
-}
-
-.event-post img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.event-post p {
-  margin-top: 5px; /* Reduced margin */
-  font-size: 14px; /* Reduced font size */
-  line-height: 1.4; /* Adjusted line height */
-}
-
-h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-/* Ensure main content container is correctly sized */
-.main {
-  position: relative;
-  margin: auto;
-  border-style: solid;
-  border-color: #000000;
-  border-width: 10px;
-  width: 80%;
-  max-width: 1200px;
-  height: auto;
-  overflow: hidden;
-  z-index: 50;
-  background-color: rgb(255, 255, 255);
-}
-
-/* Adjust the content section */
-.content-section {
-  padding: 20px;
-  box-sizing: border-box;
 }
