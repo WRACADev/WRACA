@@ -220,6 +220,9 @@ body {
     filter: hue-rotate(0deg);
   }
 }
+.content-section {
+  padding: 20px;
+}
 
 #events {
   display: none;
@@ -234,8 +237,8 @@ body {
 .event-post {
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 10px; /* Reduced padding */
-  margin-bottom: 10px; /* Reduced margin */
+  padding: 20px;
+  margin-bottom: 20px;
   background-color: #f9f9f9;
 }
 
@@ -246,14 +249,35 @@ body {
 }
 
 .event-post p {
-  margin-top: 5px; /* Reduced margin */
-  font-size: 14px; /* Reduced font size */
-  line-height: 1.4; /* Adjusted line height */
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 h2 {
   font-size: 24px;
   margin-bottom: 20px;
+}
+
+/* Ensure main content container is correctly sized */
+.main {
+  position: relative;
+  margin: auto;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 10px;
+  width: 80%;
+  max-width: 1200px;
+  height: auto;
+  overflow: hidden;
+  z-index: 50;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Adjust the content section */
+.content-section {
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .artist-showcase-container {
