@@ -1,62 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      charset="utf-8" />
+    <title>Login</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #f0f0f0; margin: 0; padding: 0; }
-        .container { width: 300px; padding: 16px; background-color: white; margin: 0 auto; margin-top: 100px; border: 1px solid black; border-radius: 4px; }
-        input[type="text"], input[type="password"] { width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; box-sizing: border-box; }
-        button { background-color: #4caf50; color: white; padding: 14px 20px; margin: 8px 0; border: none; cursor: pointer; width: 100%; }
-        .welcome { display: none; text-align: center; margin-top: 20px; }
-        .welcome.active { display: block; animation: welcome 2s; }
-        @keyframes welcome { 0% { opacity: 0; } 100% { opacity: 1; } }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 300px;
+        padding: 16px;
+        background-color: white;
+        margin: 0 auto;
+        margin-top: 100px;
+        border: 1px solid black;
+        border-radius: 4px;
+      }
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+      .welcome {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .welcome.active {
+        display: block;
+        animation: welcome 2s;
+      }
+      @keyframes welcome {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
     </style>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.2.1/jsencrypt.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <form id="loginForm" method="post">
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" id="uname" name="username" required />
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" id="psw" required />
-            <button type="button" id="login">Login</button>
-            <button type="button" id="register">Register</button>
-        </form>
+      <form id="loginForm" method="post">
+        <label for="uname"><b>Username</b></label>
+        <input
+          type="text"
+          placeholder="Enter Username"
+          id="uname"
+          name="username"
+          required />
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" id="psw" required />
+        <button type="button" id="login">Login</button>
+        <button type="button" id="register">Register</button>
+      </form>
     </div>
     <div class="welcome" id="welcome">
-        <h2>Welcome to the site!</h2>
+      <h2>Welcome to the site!</h2>
     </div>
     <script>
-        function encryptPassword(password, callback) {
-            $.get('public_key.pem', function(publicKey) {
-                let encrypt = new JSEncrypt();
-                encrypt.setPublicKey(publicKey);
-                let encrypted = encrypt.encrypt(password);
-                callback(encrypted);
-            });
-        }
-
-        $("#login").click(function () {
-            const username = $("#uname").val();
-            const password = $("#psw").val();
-            encryptPassword(password, function(encryptedPassword) {
-                $.post("LoginEncryption.php", { username, password: encryptedPassword, login: true }, function (data) {
-                    alert(data);
-                });
-            });
+      function encryptPassword(password, callback) {
+        $.get("public_key.pem", function (publicKey) {
+          let encrypt = new JSEncrypt();
+          encrypt.setPublicKey(publicKey);
+          let encrypted = encrypt.encrypt(password);
+          callback(encrypted);
         });
+      }
 
-        $("#register").click(function () {
-            const username = $("#uname").val();
-            const password = $("#psw").val();
-            encryptPassword(password, function(encryptedPassword) {
-                $.post("LoginEncryption.php", { username, password: encryptedPassword, register: true }, function (data) {
-                    alert(data);
-                });
-            });
+      $("#login").click(function () {
+        const username = $("#uname").val();
+        const password = $("#psw").val();
+        encryptPassword(password, function (encryptedPassword) {
+          $.post(
+            "LoginEncryption.php",
+            { username, password: encryptedPassword, login: true },
+            function (data) {
+              alert(data);
+            }
+          );
         });
+      });
+
+      $("#register").click(function () {
+        const username = $("#uname").val();
+        const password = $("#psw").val();
+        encryptPassword(password, function (encryptedPassword) {
+          $.post(
+            "LoginEncryption.php",
+            { username, password: encryptedPassword, register: true },
+            function (data) {
+              alert(data);
+            }
+          );
+        });
+      });
     </script>
-</body>
+  </body>
 </html>

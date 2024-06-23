@@ -1,33 +1,33 @@
-$(document).ready(function() {
-    function showSection(sectionId) {
-        $(".content-section").hide();
-        $("#" + sectionId).show();
-    }
-    
-    $(".dropdown-content a").on("click", function() {
-        var target = $(this).attr("href").substring(1);
-        showSection(target);
-    });
+$(document).ready(function () {
+  function showSection(sectionId) {
+    $(".content-section").hide();
+    $("#" + sectionId).show();
+  }
+
+  $(".dropdown-content a").on("click", function () {
+    var target = $(this).attr("href").substring(1);
+    showSection(target);
+  });
 });
 
-document.getElementById('analyzeButton').addEventListener('click', function() {
-  const fileInput = document.getElementById('audioInput');
+document.getElementById("analyzeButton").addEventListener("click", function () {
+  const fileInput = document.getElementById("audioInput");
   if (fileInput.files.length === 0) {
-    alert('Please upload an audio file.');
+    alert("Please upload an audio file.");
     return;
   }
 
   const formData = new FormData();
-  formData.append('file', fileInput.files[0]);
+  formData.append("file", fileInput.files[0]);
 
-  fetch('http://localhost:8000/predict', {
-    method: 'POST',
-    body: formData
+  fetch("http://localhost:8000/predict", {
+    method: "POST",
+    body: formData,
   })
-  .then(response => response.json())
-  .then(data => {
-    const resultDiv = document.getElementById('analysisResult');
-    resultDiv.innerHTML = `
+    .then((response) => response.json())
+    .then((data) => {
+      const resultDiv = document.getElementById("analysisResult");
+      resultDiv.innerHTML = `
       <p>Genre: ${data.genre}</p>
       <p>BPM: ${data.metrics.BPM}</p>
       <p>Spectral Centroid: ${data.metrics["Spectral Centroid"]}</p>
@@ -37,19 +37,19 @@ document.getElementById('analyzeButton').addEventListener('click', function() {
       <p>Mids: ${data.metrics.Mids}</p>
       <p>Treble: ${data.metrics.Treble}</p>
     `;
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
 });
 
 // Radio
-fetch('http://localhost:8000/library')
-  .then(response => response.json())
-  .then(data => {
-    const libraryDiv = document.getElementById('library');
-    data.forEach(item => {
-      const itemDiv = document.createElement('div');
+fetch("http://localhost:8000/library")
+  .then((response) => response.json())
+  .then((data) => {
+    const libraryDiv = document.getElementById("library");
+    data.forEach((item) => {
+      const itemDiv = document.createElement("div");
       itemDiv.innerHTML = `
         <p>Features: ${item.features}</p>
         <p>Label: ${item.label}</p>
@@ -58,8 +58,8 @@ fetch('http://localhost:8000/library')
       libraryDiv.appendChild(itemDiv);
     });
   })
-  .catch(error => {
-    console.error('Error:', error);
+  .catch((error) => {
+    console.error("Error:", error);
   });
 
 $(document).ready(function () {
@@ -81,17 +81,16 @@ $(document).ready(function () {
   });
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
   // Hide the old backgrounds
-  $('.scrollingBG, .scrollingBG2, .scrollingBG3, .scrollingBG4, .bg1').hide();
+  $(".scrollingBG, .scrollingBG2, .scrollingBG3, .scrollingBG4, .bg1").hide();
 
   // Initialize the new background animation
-  $('#newScrollingBG').show().css({
-    'background': 'linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)',
-    'animation': 'newBackgroundAnimation 20s linear infinite'
+  $("#newScrollingBG").show().css({
+    background: "linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)",
+    animation: "newBackgroundAnimation 20s linear infinite",
   });
 });
-
 
 $(document).ready(function () {
   // Show the main container and background elements
@@ -202,5 +201,4 @@ $(document).ready(function () {
     // For now, we'll just log the message
     console.log("Saving message:", { forumId, message });
   }
-  
 });
