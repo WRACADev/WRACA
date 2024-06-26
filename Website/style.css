@@ -424,48 +424,6 @@ h2 {
   display: block;
   margin: 0 auto;
 }
-/* Style for the dropdown menu button */
-.dropbtn {
-  background-color: #4caf50; /* Green background */
-  color: white; /* White text */
-  padding: 16px; /* Some padding */
-  font-size: 16px; /* Increase font size */
-  border: none; /* Remove borders */
-  cursor: pointer; /* Pointer/hand icon */
-  border-radius: 8px; /* Rounded corners */
-  transition: background-color 0.3s ease; /* Smooth background color transition */
-}
-
-.dropbtn:hover {
-  background-color: #3e8e41; /* Darker green on hover */
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border-radius: 8px; /* Rounded corners */
-  overflow: hidden; /* Hide overflow for smooth corners */
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  transition: background-color 0.3s ease; /* Smooth background color transition */
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd; /* Grey background on hover */
-}
-
-.dropdown:hover .dropdown-content {
-  display: block; /* Show dropdown menu on hover */
-}
 
 /* Animation for dropdown */
 @keyframes slideDown {
@@ -477,6 +435,42 @@ h2 {
     opacity: 1;
     transform: translateY(0);
   }
+}
+/* Ensure dropdown button is in the top left corner */
+.dropdown {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+}
+
+/* Initially hide dropdown content */
+.dropdown-content {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Optional: semi-transparent background */
+  z-index: 9999;
+}
+
+/* Show dropdown content when dropdown is active */
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  color: white; /* Adjust to your preference */
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #575757;
 }
 
 .dropdown-content {
