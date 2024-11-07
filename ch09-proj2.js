@@ -1,53 +1,32 @@
-document.addEventListener("DOMContentLoaded", async function () {
-    // Fetch JSON data
-    const response = await fetch("paintings.json");
-    const paintings = await response.json();
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8"/>  
+   <title>Lab 9</title>   
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">  
+   <link href="ch09-proj2.css" rel="stylesheet">
+   <!-- Removed paintings.json as a script, it should be fetched within ch09-proj2.js -->
+   <script src="ch09-proj2.js"></script> 
+</head>
+<body>
 
-    // Select the containers
-    const paintingList = document.querySelector("#paintings ul");
-    const detailsFigure = document.querySelector("#details figure");
+<h1>Delegation + Mouse Event Handling</h1>
+<main class="grid-container">
+   <section id="paintings">
+      <ul></ul>
+   </section>
+   <section id="details">
+      <div id="summary">
+         <h2 id="title"></h2>
+         <h3 id="artist"></h3>
+      </div>         
+      <figure>
+         <img id="full" src="" alt="Painting image"> <!-- Changed <image> to <img> and added src and alt -->
+      </figure>
+      <div id="description"></div>
+   </section>
+</main>
 
-    // Generate thumbnail images for each painting
-    paintings.forEach(painting => {
-        const listItem = document.createElement("li");
-
-        const thumbnail = document.createElement("img");
-        thumbnail.src = `images/small/${painting.id}.jpg`;
-        thumbnail.dataset.id = painting.id;
-
-        listItem.appendChild(thumbnail);
-        paintingList.appendChild(listItem);
-    });
-
-    // Display selected painting details on thumbnail click
-    paintingList.addEventListener("click", (e) => {
-        if (e.target.matches("img")) {
-            const paintingId = e.target.dataset.id;
-            const selectedPainting = paintings.find(p => p.id === paintingId);
-
-            // Clear existing content in details section
-            detailsFigure.innerHTML = '';
-
-            // Create title and artist elements
-            const title = document.createElement("h2");
-            title.textContent = selectedPainting.title;
-
-            const artist = document.createElement("h3");
-            artist.textContent = selectedPainting.artist;
-
-            // Append title and artist above the image
-            detailsFigure.append(title, artist);
-
-            // Create and append the full-size image
-            const largeImage = document.createElement("img");
-            largeImage.src = `images/large/${selectedPainting.id}.jpg`;
-            largeImage.className = "full-image";
-            detailsFigure.appendChild(largeImage);
-
-            // Create and append the description
-            const description = document.createElement("p");
-            description.textContent = selectedPainting.features.map(feature => feature.description).join(" ");
-            detailsFigure.appendChild(description);
-        }
-    });
-});
+</body>
+</html>
