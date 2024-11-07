@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painting Gallery</title>
-    <link rel="stylesheet" href="styles.css">
+   <meta charset="utf-8"/>  
+   <title>Lab 9</title>   
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">  
+   <link href="ch09-proj2.css" rel="stylesheet">
+   <script src="ch09-proj2.js"></script> 
 </head>
 <body>
-    <h1>Painting Gallery</h1>
-    
-    <div class="grid-container">
-        <div id="paintings">
-            <ul id="painting-list"></ul>
-        </div>
-        
-        <div id="details">
-            <h2 id="painting-title"></h2>
-            <h3 id="painting-artist"></h3>
-            <figure id="full"></figure>
-            <p id="description"></p>
-        </div>
-    </div>
 
-    <script src="ch09-proj02.js"></script>
+<h1>Delegation + Mouse Event Handling</h1>
+<main class="grid-container">
+   <section id="paintings">
+      <ul></ul>
+   </section>
+   <section id="details">
+      <div id="summary">
+         <h2 id="title"></h2>
+         <h3 id="artist"></h3>
+      </div>         
+      <figure>
+         <img id="full" src="" alt="Painting image"> <!-- Changed <image> to <img> and added src and alt -->
+      </figure>
+      <div id="description"></div>
+   </section>
+</main>
+
 </body>
 </html>
