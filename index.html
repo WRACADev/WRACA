@@ -2,35 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Painting Viewer</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="ch09-proj02.css">
-    <script src="ch09-proj02.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painting Gallery</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Painting Viewer</h1>
-    </header>
-
-    <main class="grid-container">
-        <section id="paintings">
-            <ul id="painting-list">
-                <!-- Thumbnails will be dynamically added here by JavaScript -->
-            </ul>
-        </section>
-
-        <section id="details">
-            <div id="summary">
-                <h2 id="painting-title"></h2>
-                <h3 id="painting-artist"></h3>
-            </div>
-            
-            <figure id="full">
-                <!-- Large painting image and feature boxes will be added here -->
-            </figure>
-
+    <h1>Painting Gallery</h1>
+    
+    <div class="grid-container">
+        <div id="paintings">
+            <ul id="painting-list"></ul>
+        </div>
+        
+        <div id="details">
+            <h2 id="painting-title"></h2>
+            <h3 id="painting-artist"></h3>
+            <figure id="full"></figure>
             <p id="description"></p>
-        </section>
-    </main>
+        </div>
+    </div>
+
+    <script src="ch09-proj02.js"></script>
 </body>
 </html>
