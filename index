@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painting Gallery</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        /* Sample CSS for layout and styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #painting-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        #painting-list img {
+            width: 100px; /* Thumbnail size */
+            cursor: pointer;
+        }
+        #painting-display {
+            position: relative;
+            margin-top: 20px;
+        }
+        #painting-display img {
+            max-width: 600px; /* Adjust as needed */
+        }
+        .box {
+            position: absolute;
+            border: 2px solid rgba(255, 0, 0, 0.5); /* Red border for feature boxes */
+            pointer-events: none; /* Prevent mouse events on the box */
+        }
+        #description {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Painting Gallery</h1>
+    
+    <div id="painting-list"></div>
+
+    <div id="painting-display">
+        <h2 id="painting-title"></h2>
+        <h3 id="painting-artist"></h3>
+        <div id="painting-image"></div>
+        <div id="description"></div>
+    </div>
+
+    <script src="ch09-proj02.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
