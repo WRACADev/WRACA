@@ -1,78 +1,53 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Fetch and parse the JSON data
-    fetch('paintings.json')
-        .then(response => response.json())
-        .then(paintings => {
-            const paintingList = document.getElementById('painting-list');
-            const full = document.getElementById('full');
-            const paintingTitle = document.getElementById('painting-title');
-            const paintingArtist = document.getElementById('painting-artist');
-            const description = document.getElementById('description');
+document.addEventListener("DOMContentLoaded", async function () {
+    // Fetch JSON data
+    const response = await fetch("paintings.json");
+    const paintings = await response.json();
 
-            // Generate thumbnail images
-            paintings.forEach(painting => {
-                const li = document.createElement('li');
-                const thumbnail = document.createElement('img');
-                thumbnail.src = `images/thumbnails/${painting.id}.jpg`;
-                thumbnail.alt = painting.title;
-                thumbnail.dataset.id = painting.id;
-                li.appendChild(thumbnail);
-                paintingList.appendChild(li);
-            });
+    // Select the containers
+    const paintingList = document.querySelector("#paintings ul");
+    const detailsFigure = document.querySelector("#details figure");
 
-            // Event delegation for thumbnail clicks
-            paintingList.addEventListener('click', (event) => {
-                if (event.target.tagName === 'IMG') {
-                    const paintingId = event.target.dataset.id;
-                    
-                    // Clear previous content
-                    full.innerHTML = '';
-                    description.textContent = '';
+    // Generate thumbnail images for each painting
+    paintings.forEach(painting => {
+        const listItem = document.createElement("li");
 
-                    // Find the selected painting
-                    const selectedPainting = paintings.find(p => p.id === paintingId);
-                    if (selectedPainting) {
-                        // Display larger painting
-                        const largeImage = document.createElement('img');
-                        largeImage.src = `images/large/${selectedPainting.id}.jpg`;
-                        full.appendChild(largeImage);
+        const thumbnail = document.createElement("img");
+        thumbnail.src = `images/small/${painting.id}.jpg`;
+        thumbnail.dataset.id = painting.id;
 
-                        // Display title and artist
-                        paintingTitle.textContent = selectedPainting.title;
-                        paintingArtist.textContent = selectedPainting.artist;
+        listItem.appendChild(thumbnail);
+        paintingList.appendChild(listItem);
+    });
 
-                        // Create rectangles for features
-                        selectedPainting.features.forEach(feature => {
-                            const box = document.createElement('div');
-                            box.classList.add('box');
-                            
-                            const left = feature.upperLeft[0];
-                            const top = feature.upperLeft[1];
-                            const width = feature.lowerRight[0] - feature.upperLeft[0];
-                            const height = feature.lowerRight[1] - feature.upperLeft[1];
+    // Display selected painting details on thumbnail click
+    paintingList.addEventListener("click", (e) => {
+        if (e.target.matches("img")) {
+            const paintingId = e.target.dataset.id;
+            const selectedPainting = paintings.find(p => p.id === paintingId);
 
-                            // Set the CSS properties
-                            box.style.position = 'absolute';
-                            box.style.left = `${left}px`;
-                            box.style.top = `${top}px`;
-                            box.style.width = `${width}px`;
-                            box.style.height = `${height}px`;
+            // Clear existing content in details section
+            detailsFigure.innerHTML = '';
 
-                            // Mouseover and mouseout events
-                            box.addEventListener('mouseover', () => {
-                                description.textContent = feature.description;
-                            });
+            // Create title and artist elements
+            const title = document.createElement("h2");
+            title.textContent = selectedPainting.title;
 
-                            box.addEventListener('mouseout', () => {
-                                description.textContent = '';
-                            });
+            const artist = document.createElement("h3");
+            artist.textContent = selectedPainting.artist;
 
-                            // Append the box to the painting display
-                            full.appendChild(box);
-                        });
-                    }
-                }
-            });
-        })
-        .catch(error => console.error('Error loading the paintings:', error));
+            // Append title and artist above the image
+            detailsFigure.append(title, artist);
+
+            // Create and append the full-size image
+            const largeImage = document.createElement("img");
+            largeImage.src = `images/large/${selectedPainting.id}.jpg`;
+            largeImage.className = "full-image";
+            detailsFigure.appendChild(largeImage);
+
+            // Create and append the description
+            const description = document.createElement("p");
+            description.textContent = selectedPainting.features.map(feature => feature.description).join(" ");
+            detailsFigure.appendChild(description);
+        }
+    });
 });
